@@ -1,0 +1,39 @@
+HEADER
+    - Balise HEADER
+        - Div Container1
+            - Div Row
+                - Div NAV + .Col
+                    - LOGO (à Gauche)
+                    - Marque (à Gauche - à côté de Logo)
+                    - Balise <a> contenant logo "Panier" + mention "Mon panier" (à Droite)
+
+DIV Container2 (pour CONTENU DE LA PAGE >> Section HERO + Section CARDS)
+    - Margin 0 auto;
+
+SECTION HERO
+    - Div Row
+        - Section HERO + .Col
+            - Background image "Appareil photo"
+            - H1 : Bienvenue dans Oriphoto
+
+SECTION CARDS
+    - Div Row
+        - Div .col-4
+            - Produit 1
+        - Div .col-8
+            - Div Row
+                - Div .col-4 >> Produit 2
+                - Div .col-4 >> Produit 3
+            - Div Row
+                - Div .col-4 >> Produit 4
+                - Div .col-4 >> Produit 5
+
+Fin DIV Container2
+
+FOOTER
+    - Balise FOOTER
+        - Div Container3
+            - Div Row
+                - Div .col-4 "Accueil"
+                - Div .col-4 "Qui sommes-nous ?"
+                - Div .col-4 "Contact"

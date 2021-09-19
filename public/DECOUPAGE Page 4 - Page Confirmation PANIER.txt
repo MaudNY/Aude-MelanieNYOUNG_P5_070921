@@ -1,0 +1,24 @@
+HEADER
+    - Balise HEADER
+        - Div Container1
+            - Div Row
+                - Div NAV + .Col
+                    - LOGO (à Gauche)
+                    - Marque (à Gauche - à côté de Logo)
+                    - Balise <a> contenant logo "Panier" + mention "Mon panier" (à Droite)
+
+DIV Container6
+    - Margin 0 auto;
+
+SECTION CONFIRMATION PANIER
+
+
+Fin DIV Container6
+
+FOOTER
+    - Balise FOOTER
+        - Div Container3
+            - Div Row
+                - Div .col-4 "Accueil"
+                - Div .col-4 "Qui sommes-nous ?"
+                - Div .col-4 "Contact"

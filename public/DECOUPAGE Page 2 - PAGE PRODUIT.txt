@@ -1,0 +1,34 @@
+HEADER
+    - Balise HEADER
+        - Div Container1
+            - Div Row
+                - Div NAV + .Col
+                    - LOGO (à Gauche)
+                    - Marque (à Gauche - à côté de Logo)
+                    - Balise <a> contenant logo "Panier" + mention "Mon panier" (à Droite)
+
+DIV Container4
+    - Margin 0 auto;
+
+SECTION PRODUIT
+    - Div Row
+        - Div .col-6
+            - Div img (image produit)
+        - Div .col-4
+            - Balise H2 Row >> Titre du produit
+            - Balise <p> Row >> Description du produit
+            - Div Row >> Menu déroulant option de personnalisation
+        - Div .col-2
+            - Balise <p> Row >> Prix
+            - Div Row >> Quantité
+            - Div Row >> Bouton "Ajouter au panier"
+
+Fin DIV Container4
+
+FOOTER
+    - Balise FOOTER
+        - Div Container3
+            - Div Row
+                - Div .col-4 "Accueil"
+                - Div .col-4 "Qui sommes-nous ?"
+                - Div .col-4 "Contact"
