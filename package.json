@@ -1,0 +1,22 @@
+{
+  "name": "aude-melanienyoung_p5_070921",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass" : "sass --watch ./scss/style.scss:public/css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaudNY/Aude-MelanieNYOUNG_P5_070921.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MaudNY/Aude-MelanieNYOUNG_P5_070921/issues"
+  },
+  "homepage": "https://github.com/MaudNY/Aude-MelanieNYOUNG_P5_070921#readme",
+  "dependencies": {
+    "bootstrap": "^5.1.1"
+  }
+}
