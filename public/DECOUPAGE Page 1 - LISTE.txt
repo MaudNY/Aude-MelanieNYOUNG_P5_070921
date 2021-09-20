@@ -18,15 +18,16 @@ SECTION HERO
 
 SECTION CARDS
     - Div Row
-        - Div .col-4
-            - Produit 1
-        - Div .col-8
-            - Div Row
-                - Div .col-4 >> Produit 2
-                - Div .col-4 >> Produit 3
-            - Div Row
-                - Div .col-4 >> Produit 4
-                - Div .col-4 >> Produit 5
+        - Section PRODUITS + .Col
+            - Div .col-4
+                - Produit 1
+            - Div .col-8
+                - Div Row
+                    - Div .col-4 >> Produit 2
+                    - Div .col-4 >> Produit 3
+                - Div Row
+                    - Div .col-4 >> Produit 4
+                    - Div .col-4 >> Produit 5
 
 Fin DIV Container2
 
