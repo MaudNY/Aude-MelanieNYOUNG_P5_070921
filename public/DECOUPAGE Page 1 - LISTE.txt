@@ -4,8 +4,9 @@ HEADER
             - Div Row
                 - Div NAV + .Col
                     - LOGO (à Gauche)
-                    - Marque (à Gauche - à côté de Logo)
-                    - Balise <a> contenant logo "Panier" + mention "Mon panier" (à Droite)
+                    - Div "Panier"
+                        - Balise span "Mon panier"
+                        - Icône "Panier"
 
 DIV Container2 (pour CONTENU DE LA PAGE >> Section HERO + Section CARDS)
     - Margin 0 auto;
