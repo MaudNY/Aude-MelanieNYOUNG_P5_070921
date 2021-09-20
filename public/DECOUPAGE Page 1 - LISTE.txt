@@ -8,13 +8,12 @@ HEADER
                         - Balise span "Mon panier"
                         - Icône "Panier"
 
-DIV Container2 (pour CONTENU DE LA PAGE >> Section HERO + Section CARDS)
-    - Margin 0 auto;
+DIV Container (pour CONTENU DE LA PAGE >> Section HERO + Section CARDS)
 
 SECTION HERO
     - Div Row
         - Section HERO + .Col
-            - Background image "Appareil photo"
+            - Background Carrousel "Appareils photos"
             - H1 : Bienvenue dans Oriphoto
 
 SECTION CARDS
