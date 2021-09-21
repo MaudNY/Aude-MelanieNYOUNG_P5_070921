@@ -1,0 +1,13 @@
+.hero {
+    min-height: 25em;
+    h1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.bg-banniere {
+    background: url("../../public/img/hero-section-bg-min.jpg") no-repeat;
+    position: relative;
+}

@@ -20,7 +20,7 @@
 <body>
 
     <!-- EN-TÊTE -->
-    <header class="bg-light">
+    <header class="bg-primary">
         <div class="container">
             <div class="row">
                 <nav class="col navbar">
@@ -34,74 +34,80 @@
         </div>
     </header>
 
-    <!-- Début du conteneur CONTENU -->
-    <div class="container">
+    <!-- Début du MAIN -->
+    <main>
 
         <!-- Section HERO -->
         <div class="row">
-            <section class="hero col">
-                <h1>Bienvenue dans Oriphoto</h1>
+            <section class="hero row bg-banniere">
+                <h1 class="col">Bienvenue dans Oriphoto</h1>
             </section>
         </div>
 
-        <!-- Section CARTES PRODUITS -->
-        <div class="row">
-            <section class="produits col">
-                <h2 class ="row">Découvrez nos produits sans plus attendre</h2>
-              
-                <div class="row bloc-produits">
-                    <div class="col-6">
-                        <div class="card">
-                            <img class="card-img-top" src="../backend/images/vcam_1.jpg" alt="Appareil photo Zurss 50S"/>
-                            <div class="card-body">
-                                <h3 class="card-title">Zurss 50S</h3>
-                                <p class="card-price">499,00€</p>
+        <!-- Début du conteneur PRODUITS -->
+        <div class="container">
+
+            <!-- Section CARTES PRODUITS -->
+            <div class="row">
+                <section class="produits col">
+                    <h2 class ="row">Découvrez nos produits sans plus attendre</h2>
+                
+                    <div class="row bloc-produits">
+                        <div class="col-6">
+                            <div class="card">
+                                <img class="card-img-top" src="../backend/images/vcam_1.jpg" alt="Appareil photo Zurss 50S"/>
+                                <div class="card-body">
+                                    <h3 class="card-title">Zurss 50S</h3>
+                                    <p class="card-price">499,00€</p>
+                                </div>
                             </div>
                         </div>
+
+                        <div class="col-6">
+                            <div class="row ligne-lat-produits">
+                                <div class="card col">
+                                    <img class="card-img-top" src="../backend/images/vcam_2.jpg" alt="Appareil photo Hirsch 400DTS"/>
+                                    <div class="card-body">
+                                        <h3 class="card-title">Hirsch 400DTS</h3>
+                                        <p class="card-price">3099,00€</p>
+                                    </div>
+                                </div>
+                                <div class="card col">
+                                    <img class="card-img-top" src="../backend/images/vcam_3.jpg" alt="Appareil photo Franck JS 105"/>
+                                    <div class="card-body">
+                                        <h3 class="card-title">Franck JS 105</h3>
+                                        <p class="card-price">2099,00€</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row ligne-lat-produits">
+                                <div class="card col">
+                                    <img class="card-img-top" src="../backend/images/vcam_4.jpg" alt="Appareil photo Kuros TTS"/>
+                                    <div class="card-body">
+                                        <h3 class="card-title">Kuros TTS</h3>
+                                        <p class="card-price">1599,00€</p>
+                                    </div>
+                                </div>
+                                <div class="card col">
+                                    <img class="card-img-top" src="../backend/images/vcam_5.jpg" alt="Appareil photo Katatone"/>
+                                    <div class="card-body">
+                                        <h3 class="card-title">Katatone</h3>
+                                        <p class="card-price">599,00€</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
 
-                    <div class="col-6">
-                        <div class="row ligne-lat-produits">
-                            <div class="card col">
-                                <img class="card-img-top" src="../backend/images/vcam_2.jpg" alt="Appareil photo Hirsch 400DTS"/>
-                                <div class="card-body">
-                                    <h3 class="card-title">Hirsch 400DTS</h3>
-                                    <p class="card-price">3099,00€</p>
-                                </div>
-                            </div>
-                            <div class="card col">
-                                <img class="card-img-top" src="../backend/images/vcam_3.jpg" alt="Appareil photo Franck JS 105"/>
-                                <div class="card-body">
-                                    <h3 class="card-title">Franck JS 105</h3>
-                                    <p class="card-price">2099,00€</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row ligne-lat-produits">
-                            <div class="card col">
-                                <img class="card-img-top" src="../backend/images/vcam_4.jpg" alt="Appareil photo Kuros TTS"/>
-                                <div class="card-body">
-                                    <h3 class="card-title">Kuros TTS</h3>
-                                    <p class="card-price">1599,00€</p>
-                                </div>
-                            </div>
-                            <div class="card col">
-                                <img class="card-img-top" src="../backend/images/vcam_5.jpg" alt="Appareil photo Katatone"/>
-                                <div class="card-body">
-                                    <h3 class="card-title">Katatone</h3>
-                                    <p class="card-price">599,00€</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                </section>
+            </div>
 
-                </div>
-
-            </section>
+        <!-- Fin du conteneur PRODUITS -->
         </div>
 
-    <!-- Fin du conteneur CONTENU -->
-    </div>
+    <!-- Fin du MAIN -->
+    </main>
 
     <!-- PIED-DE-PAGE -->
     <footer class="bg-light">
