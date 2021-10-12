@@ -11086,6 +11086,10 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+a, ul {
+  text-decoration-line: none;
+}
+
 .card {
   border-radius: 0px 50px;
   overflow: hidden;
@@ -11094,10 +11098,21 @@ textarea.form-control-lg {
   border-radius: 0px 50px 0px 0px;
 }
 
+#panier {
+  display: flex;
+  align-items: flex-start;
+}
+#panier span {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+#panier .fas {
+  font-size: 2.5em;
+}
+
 #img-banniere {
   background: url("../../public/img/hero-section-bg-min-2.jpg") no-repeat;
   background-position: center;
-  background-color: #f2f2f2;
   width: 100%;
   height: 238px;
   margin: 0;
@@ -11132,6 +11147,15 @@ textarea.form-control-lg {
 }
 .section-produits .col-3 {
   margin-bottom: 1.55em;
+}
+
+.ligne-pied-de-page {
+  display: flex;
+  padding: 1em 0em;
+  font-size: 1.15em;
+}
+.ligne-pied-de-page .col-4 {
+  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */
