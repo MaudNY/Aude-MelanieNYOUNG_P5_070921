@@ -1,5 +1,7 @@
 .img-produit {
     margin: 12.25em 0;
+    border-radius: 0px 165px;
+    overflow: hidden;
     img {
         width: 100%;
     }
@@ -7,8 +9,17 @@
 
 .desc-produit {
     @include cadre-fiche-produit;
+    h2 {
+        font-size: 1.75em;
+        font-weight: bold;
+    }
 }
 
 .achat-produit {
     @include cadre-fiche-produit;
+}
+
+.prix {
+    font-size: 1.75em;
+    font-weight: bold;
 }
