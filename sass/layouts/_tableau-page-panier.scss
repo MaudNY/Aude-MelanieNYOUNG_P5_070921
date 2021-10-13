@@ -2,8 +2,39 @@
     margin: 10em auto;
 }
 
-.img-produit-panier {
-    img {
-        width: 100%;
+.tableau-ligne {
+    &--1, &--finale {
+        background: $gris-clair;
+        font-weight: bold;
+    }
+    .mon-panier {
+        font-size: 2em;
+        @include padding-catégorie-tableau;
+    }
+    .img-produit-panier {
+        img {
+            width: 100%;
+        }
+    }
+    .caract-produits {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
     }
 }
+
+.catégorie-tableau {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25em;
+    @include padding-catégorie-tableau;
+}
+
+.ligne-séparation {
+    background: black;
+    width: 50px;
+    height: 2px;
+    border-bottom: black 2px solid;
+}
+

@@ -11102,6 +11102,9 @@ a, ul {
   background: linear-gradient(to bottom right, #E8870D, #8F5BFE);
   border-radius: 20px;
 }
+.bouton-type--panier {
+  margin: 3em 0;
+}
 
 .card {
   border-radius: 0px 50px;
@@ -11203,8 +11206,36 @@ label {
   margin: 10em auto;
 }
 
-.img-produit-panier img {
+.tableau-ligne--1, .tableau-ligne--finale {
+  background: #F8F9FA;
+  font-weight: bold;
+}
+.tableau-ligne .mon-panier {
+  font-size: 2em;
+  padding: 0.5em 0.5em;
+}
+.tableau-ligne .img-produit-panier img {
   width: 100%;
+}
+.tableau-ligne .caract-produits {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.catégorie-tableau {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.25em;
+  padding: 0.5em 0.5em;
+}
+
+.ligne-séparation {
+  background: black;
+  width: 50px;
+  height: 2px;
+  border-bottom: black 2px solid;
 }
 
 .ligne-pied-de-page {
