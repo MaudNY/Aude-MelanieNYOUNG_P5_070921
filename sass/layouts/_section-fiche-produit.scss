@@ -1,0 +1,14 @@
+.img-produit {
+    margin: 12.25em 0;
+    img {
+        width: 100%;
+    }
+}
+
+.desc-produit {
+    @include cadre-fiche-produit;
+}
+
+.achat-produit {
+    @include cadre-fiche-produit;
+}

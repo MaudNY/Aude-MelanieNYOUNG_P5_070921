@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<!-- Méta-données -->
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/style.css" />
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/png" href="img/Icon Orinoco-min.jpg">
+
+    <!-- CDN Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" integrity="sha512-BnbUDfEUfV0Slx6TunuB042k9tuKe3xrD6q4mg5Ed72LTgzDIcLPxg6yI2gcMFRyomt+yJJxE+zJwNmxki6/RA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Orinoco | Du plaisir à gogo</title>
+</head>
+
+<!-- CORPS de la page -->
+<body>
+
+    <!-- EN-TÊTE -->
+    <header class="bg-secondary">
+        <div class="container">
+            <div class="row">
+                <nav class="col navbar">
+                    <a href="index.html"><img src="img/Logo Orinoco-min.jpg" alt="Logo marque Orinoco" /></a>
+                    <div id="panier">
+                        <span>Mon panier</span>
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Début du MAIN -->
+    <main>
+
+        <!-- FICHE PRODUIT -->
+
+        <!-- Début du conteneur PRODUITS -->
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-6 img-produit"><img src="../backend/images/vcam_1.jpg" alt="Appareil photo Zurss 50S" /></div>
+                <div class="col-4 desc-produit">
+                    <h2>Appareil photo Zurss 50S</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <form method="post" action="a-définir" class="form-option-lentille">
+                        <p>
+                            <label for="lens">Type de lentille</label><br />
+                            <select name="lens" id="lens">
+                                <option value="0">35mm 1.4</option>
+                                <option value="1">50mm 1.6</option>
+                            </select>
+                        </p>
+                     </form>
+                </div>
+                <div class="col-2 achat-produit">
+                    <p class="prix">499,00€</p>
+                    <form method="post" action="a-définir" class="form-quantité-produit">
+                        <p>
+                            <label for="quantité">Quantité</label><br />
+                            <select name="quantité" id="quantité">
+                                <option value="0">1</option>
+                                <option value="1">2</option>
+                                <option value="2">3</option>
+                                <option value="3">4</option>
+                                <option value="4">5</option>
+                                <option value="5">6</option>
+                                <option value="6">7</option>
+                                <option value="7">8</option>
+                                <option value="8">9</option>
+                                <option value="9">10</option>
+                            </select>
+                        </p>
+                     </form>
+                    <div class="bouton-ajout-panier">Ajouter au panier</div>
+                </div>
+
+            </div>
+
+        <!-- Fin du conteneur Fiche Produit -->
+        </div>
+
+    <!-- Fin du MAIN -->
+    </main>
+
+    <!-- PIED-DE-PAGE -->
+    <footer class="bg-light">
+        <div class="container">
+
+            <div class="row ligne-pied-de-page">
+                <div class="col-4"><a href="index.html">Accueil</a></div>
+                <div class="col-4"><a href="#">Qui sommes-nous ?</a></div>
+                <div class="col-4"><a href="mailto:prénom.nom@gmail.com">Contact</a></div>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -11086,6 +11086,7 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+/* Mixins FICHE PRODUIT */
 a, ul {
   text-decoration-line: none;
 }
@@ -11147,6 +11148,32 @@ a, ul {
 }
 .section-produits .col-3 {
   margin-bottom: 1.55em;
+}
+
+/* Formulaires FICHE PRODUIT */
+label {
+  font-weight: bold;
+}
+
+.img-produit {
+  margin: 12.25em 0;
+}
+.img-produit img {
+  width: 100%;
+}
+
+.desc-produit {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 12.25em 0em;
+}
+
+.achat-produit {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 12.25em 0em;
 }
 
 .ligne-pied-de-page {

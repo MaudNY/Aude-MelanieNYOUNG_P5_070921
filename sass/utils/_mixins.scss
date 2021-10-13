@@ -1,0 +1,8 @@
+/* Mixins FICHE PRODUIT */
+
+@mixin cadre-fiche-produit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 12.25em 0em;
+}
