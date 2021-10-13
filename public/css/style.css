@@ -11093,7 +11093,7 @@ a, ul {
 }
 
 /* Bouton AJOUTER AU PANIER */
-.bouton-ajout-panier {
+.bouton-type {
   color: white;
   font-weight: bold;
   text-align: center;
@@ -11197,6 +11197,14 @@ label {
 .prix {
   font-size: 1.75em;
   font-weight: bold;
+}
+
+#tableau-panier {
+  margin: 10em auto;
+}
+
+.img-produit-panier img {
+  width: 100%;
 }
 
 .ligne-pied-de-page {
