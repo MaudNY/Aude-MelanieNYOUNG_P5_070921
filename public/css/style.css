@@ -11210,6 +11210,9 @@ label {
   background: #F8F9FA;
   font-weight: bold;
 }
+.tableau-ligne--x {
+  margin: 1em 0 0 0;
+}
 .tableau-ligne .mon-panier {
   font-size: 2em;
   padding: 0.5em 0.5em;
@@ -11232,10 +11235,10 @@ label {
 }
 
 .ligne-séparation {
-  background: black;
-  width: 50px;
+  background: linear-gradient(to bottom right, #E8870D, #8F5BFE);
+  width: 100%;
   height: 2px;
-  border-bottom: black 2px solid;
+  border-bottom: linear-gradient(to bottom right, #E8870D, #8F5BFE) 2px solid;
 }
 
 .ligne-pied-de-page {

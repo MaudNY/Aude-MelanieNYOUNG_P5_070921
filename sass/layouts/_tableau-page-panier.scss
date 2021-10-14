@@ -7,6 +7,9 @@
         background: $gris-clair;
         font-weight: bold;
     }
+    &--x {
+        margin: 1em 0 0 0;
+    }
     .mon-panier {
         font-size: 2em;
         @include padding-catégorie-tableau;
@@ -32,9 +35,9 @@
 }
 
 .ligne-séparation {
-    background: black;
-    width: 50px;
+    background: $couleur-dégradée;
+    width: 100%;
     height: 2px;
-    border-bottom: black 2px solid;
+    border-bottom: $couleur-dégradée 2px solid;
 }
 
