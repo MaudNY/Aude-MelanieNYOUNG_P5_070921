@@ -1,11 +1,25 @@
 #panier {
     display: flex;
     align-items: flex-start;
-    span {
+    #libellé-panier {
         font-weight: bold;
         font-size: 1.2em;
     }
     .fas {
         font-size: 2.5em;
+    }
+    .nombre-items-panier {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        top: -5px;
+        right: 12px;
+        background: $couleur2;
+        width: 20px;
+        height: 20px;
+        border-radius: 20px;
+        color: white;
+        font-size: 0.9em;
     }
 }

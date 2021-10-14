@@ -11118,12 +11118,26 @@ a, ul {
   display: flex;
   align-items: flex-start;
 }
-#panier span {
+#panier #libellé-panier {
   font-weight: bold;
   font-size: 1.2em;
 }
 #panier .fas {
   font-size: 2.5em;
+}
+#panier .nombre-items-panier {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: -5px;
+  right: 12px;
+  background: #8F5BFE;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  color: white;
+  font-size: 0.9em;
 }
 
 #img-banniere {
