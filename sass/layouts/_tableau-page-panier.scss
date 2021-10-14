@@ -1,5 +1,5 @@
 #tableau-panier {
-    margin: 10em auto;
+    margin: 10em auto 2em auto;
 }
 
 .tableau-ligne {
@@ -9,6 +9,11 @@
     }
     &--x {
         margin: 1em 0 0 0;
+    }
+    &--coordonnées {
+        text-align: center;
+        font-size: 1.5em;
+        padding: 0.5em 0 0.5em 0.5em;
     }
     .mon-panier {
         @include tableau-ligne-1;
@@ -23,6 +28,30 @@
         justify-content: center;
         flex-direction: column;
     }
+    .quantité-produits-panier {
+        #bouton-moins, #bouton-plus {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 1.25em;
+            background: $fond-foncé;
+            width: 25px;
+            height: 25px;
+            border-radius: 20px;
+            color: white;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+    }
+    .ligne-séparation {
+        background: $couleur-dégradée;
+        width: 100%;
+        height: 2px;
+        border-bottom: $couleur-dégradée 2px solid;
+        &--page-panier {
+            margin-top: 16px;
+        }
+    }
 }
 
 .catégorie-tableau {
@@ -33,10 +62,5 @@
     padding: 0.5em 0.5em;
 }
 
-.ligne-séparation {
-    background: $couleur-dégradée;
-    width: 100%;
-    height: 2px;
-    border-bottom: $couleur-dégradée 2px solid;
-}
+
 
