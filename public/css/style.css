@@ -11087,6 +11087,7 @@ textarea.form-control-lg {
   }
 }
 /* Couleurs*/
+/* Mixins génériques */
 /* Mixins FICHE PRODUIT */
 a, ul {
   text-decoration-line: none;
@@ -11101,6 +11102,9 @@ a, ul {
   margin: 0.75em 0;
   background: linear-gradient(to bottom right, #E8870D, #8F5BFE);
   border-radius: 20px;
+}
+.bouton-type a {
+  color: white;
 }
 .bouton-type--panier {
   margin: 3em 0;
@@ -11253,6 +11257,21 @@ label {
   width: 100%;
   height: 2px;
   border-bottom: linear-gradient(to bottom right, #E8870D, #8F5BFE) 2px solid;
+}
+
+#tableau-confirmation-commande {
+  margin: 5em 0 10em 0;
+}
+#tableau-confirmation-commande .tableau-ligne--1 {
+  background: #F8F9FA;
+  font-weight: bold;
+}
+#tableau-confirmation-commande .tableau-ligne--1 .commande-confirmée {
+  font-size: 2em;
+  padding: 0.5em 0.5em;
+}
+#tableau-confirmation-commande .message-commande-confirmée {
+  padding: 3em 0;
 }
 
 .ligne-pied-de-page {

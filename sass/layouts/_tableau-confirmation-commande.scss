@@ -1,0 +1,13 @@
+#tableau-confirmation-commande {
+    margin: 5em 0 10em 0;
+    .tableau-ligne--1 {
+        background: $fond-clair;
+        font-weight: bold;
+        .commande-confirmée {
+            @include tableau-ligne-1;
+        }
+    }
+    .message-commande-confirmée {
+        padding: 3em 0;
+    }
+}

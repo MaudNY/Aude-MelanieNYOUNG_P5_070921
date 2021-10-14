@@ -11,8 +11,7 @@
         margin: 1em 0 0 0;
     }
     .mon-panier {
-        font-size: 2em;
-        @include padding-catégorie-tableau;
+        @include tableau-ligne-1;
     }
     .img-produit-panier {
         img {
@@ -31,7 +30,7 @@
     justify-content: center;
     align-items: center;
     font-size: 1.25em;
-    @include padding-catégorie-tableau;
+    padding: 0.5em 0.5em;
 }
 
 .ligne-séparation {

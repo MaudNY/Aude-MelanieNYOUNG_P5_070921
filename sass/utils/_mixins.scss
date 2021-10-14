@@ -1,3 +1,9 @@
+/* Mixins génériques */
+
+@mixin couleur-lien ($couleur) {
+    color: $couleur;
+}
+
 /* Mixins FICHE PRODUIT */
 
 @mixin cadre-fiche-produit {
@@ -7,6 +13,7 @@
     margin: 12.25 0em;
 }
 
-@mixin padding-catégorie-tableau {
+@mixin tableau-ligne-1 {
+    font-size: 2em;
     padding: 0.5em 0.5em;
 }
