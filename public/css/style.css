@@ -11095,8 +11095,6 @@ a, ul {
 
 /* Bouton AJOUTER AU PANIER + COMMANDER */
 .bouton-type {
-  color: white;
-  font-weight: bold;
   text-align: center;
   padding: 0.5em 0;
   margin: 0.75em 0;
@@ -11117,13 +11115,23 @@ a, ul {
 }
 
 /* Boutons QUANTITE */
-.bouton-quantité {
+#bouton-moins, #bouton-plus {
   display: flex;
-  margin: 0 0.5em;
-}
-.bouton-quantité #bouton-moins, .bouton-quantité #bouton-plus {
   justify-content: center;
-  align-items: center;
+  margin: 0 1.25em;
+  width: 32px;
+  height: 32px;
+  border-radius: 20px;
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
+#bouton-moins {
+  background: #FF3B3B;
+}
+
+#bouton-plus {
+  background: #00B050;
 }
 
 .card {
@@ -11273,28 +11281,6 @@ label {
   display: flex;
   justify-content: center;
   flex-direction: column;
-}
-.tableau-ligne .quantité-produits-panier #bouton-moins, .tableau-ligne .quantité-produits-panier #bouton-plus {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 1.25em;
-  background: #bfbfbf;
-  width: 25px;
-  height: 25px;
-  border-radius: 20px;
-  color: white;
-  font-size: 0.9em;
-  font-weight: bold;
-}
-.tableau-ligne .ligne-séparation {
-  background: linear-gradient(to bottom right, #E8870D, #8F5BFE);
-  width: 100%;
-  height: 2px;
-  border-bottom: linear-gradient(to bottom right, #E8870D, #8F5BFE) 2px solid;
-}
-.tableau-ligne .ligne-séparation--page-panier {
-  margin-top: 16px;
 }
 
 .catégorie-tableau {

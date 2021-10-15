@@ -1,0 +1,37 @@
+PANIER HEADER
+Fonction localStorage
+Fonction vignette nombre items apparaît une fois que n = 1
+Fonction n + 1 à chaque clic sur bouton "Ajouter au panier"
+Fonction n + 1 à chaque clic sur bouton "Bouton +"
+Fonction n - 1 à chaque clic sur bouton "Bouton -"
+
+PAGE D'ACCUEIL
+Fonction Chargement liste de produits quand le serveur est ouvert >> au chargement de la page
+>> Si serveur fermé >> apparition message d'excuse + invitation à réessayer plus tard
+
+PAGE PRODUITS
+Fonction chargement photo produit >> au chargement de la page
+Fonction chargement description produit >> au chargement de la page
+Fonction chargement choix produit >> au chargement de la page
+Fonction chargement prix produit >> au chargement de la page
+Fonction chargement qté produit >> au chargement de la page
+>> Si serveur fermé >> apparition message d'excuse + invitation à réessayer plus tard
+
+PAGE PANIER
+Fonction chargement photo produit (en fonction de l'objet sélectionné) >> au chargement de la page
+Fonction chargement description produit (en fonction de l'objet sélectionné) >> au chargement de la page
+Fonction chargement choix produit (en fonction de l'objet sélectionné) >> au chargement de la page
+Fonction chargement prix produit (en fonction de l'objet sélectionné) >> au chargement de la page
+Fonction chargement qté produit (en fonction de la qté sélectionnée sur Page PRODUIT) >> au chargement de la page
+
+Fonction multiplication du prix par quantité de produits
+Fonction somme de toutes les quantités de produits
+Fonction montant total de la commande
+
+>> Si serveur fermé >> apparition message d'excuse + invitation à réessayer plus tard
+
+PAGE CONFIRMATION COMMANDE (si données renseignées correctes... chargement de la page)
+Fonction chargement du prénom du client (en fonction des données saisies dans la Page Panier)
+Fonction chargement du numéro de commande attribué (en fonction des données du serveur)
+Fonction chargement du montant total de la commande (en fonction des données saisies dans la Page Panier)
+Fonction chargement adresse du client (en fonction des données saisies dans la Page Panier)
