@@ -1,0 +1,11 @@
+.tableau-coordonnées {
+    margin-top: 1em;
+    .fond-clair {
+        background: $fond-clair-2;
+        input {
+            width: 100%;
+            margin: 0.5em 0;
+            padding: 0.5em 0 0.5em 0.5em;
+        }
+    }
+}

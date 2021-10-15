@@ -1,4 +1,4 @@
-/* Bouton AJOUTER AU PANIER */
+/* Bouton AJOUTER AU PANIER + COMMANDER */
 .bouton-type {
     color: white;
     font-weight: bold;
@@ -10,7 +10,39 @@
     a {
         @include couleur-lien (white);
     }
-    &--panier {
-        margin: 3em 0;
+    &--commander {
+        margin: 2em 0;
+        input {
+            color: white;
+            font-weight: bold;
+            background: transparent;
+            border: none;
+        }
     }
+}
+
+/* Boutons QUANTITE */
+
+.bouton-quantité {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 1.25em;
+    font-size: 0.9em;
+}
+
+#bouton-moins, #bouton-plus {
+    color: black;
+    width: 32px;
+    height: 32px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+#bouton-moins {
+    background: $rouge-type;
+}
+
+#bouton-plus {
+    background: $vert-type;
 }

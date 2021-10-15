@@ -40,6 +40,7 @@
         <!-- Début du conteneur Page Panier -->
         <div class="container">
 
+            <!-- Tableau Panier -->
             <div id="tableau-panier">
                 <div class="row tableau-ligne tableau-ligne--1">
                     <div class="col-8 mon-panier">MON PANIER</div>
@@ -62,9 +63,9 @@
                         </form>
                     </div>
                     <div class="col-2 catégorie-tableau quantité-produits-panier">
-                        <div id="bouton-moins">-</div>
+                        <div class="bouton-quantité"><input type="button" id="bouton-moins" value="-"></div>
                         <span>1</span>
-                        <div id="bouton-plus">+</div>
+                        <div class="bouton-quantité"><input type="button" id="bouton-plus" value="+"></div>
                     </div>
                     <div class="col-2 catégorie-tableau">499,00 €</div>
                     <div class="ligne-séparation ligne-séparation--page-panier"></div>
@@ -81,16 +82,40 @@
                 </div>
             </div>
 
+            <!-- Tableau Coordonnées -->
             <div id="saisie-coordonnées">
                 <div class="row">
                     <div class="col-8"></div>
                     <div class="col-4 tableau-ligne tableau-ligne--1 tableau-ligne--coordonnées">MES COORDONNÉES</div>
                 </div>
+
+                <form class="tableau-coordonnées" method="post" action="à-définir">
+                    <div class="row">
+                        <div class="col-6"></div>
+                        <div class="col-3 fond-clair"><input type="text" name="prenom" id="prenom" placeholder="Prénom" required/></div>
+                        <div class="col-3 fond-clair"><input type="text" name="nom" id="nom" placeholder="Nom" required/></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6"></div>
+                        <div class="col-6 fond-clair"><input type="text" name="adresse" id="adresse" placeholder="Numéro, nom de rue (Ex : 8, avenue Charles Fitte)" required/></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6"></div>
+                        <div class="col-6 fond-clair"><input type="text" name="complement-adresse" id="complement-adresse" placeholder="Complément d'adresse (bâtiment, code d'accès à l'immeuble, etc.)"/></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6"></div>
+                        <div class="col-3 fond-clair"><input type="text" name="code-postal" id="code-postal" placeholder="Code Postal" required/></div>
+                        <div class="col-3 fond-clair"><input type="text" name="ville" id="ville" placeholder="Ville" required/></div>
+                    </div>
+                </form>
+
             </div>
 
+            <!-- Bouton "Commander" -->
             <div class="row">
                 <div class="col-9"></div>
-                <div class="col-2 bouton-type bouton-type--panier"><a href="page-confirmation-commande.html">COMMANDER</a></div>
+                <div class="col-2 bouton-type bouton-type--commander"><input type="submit" value="COMMANDER"></div>
                 <div class="col-1"></div>
             </div>
 
