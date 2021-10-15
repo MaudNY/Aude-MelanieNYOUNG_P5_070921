@@ -24,25 +24,5 @@
 /* Boutons QUANTITE */
 
 .bouton-quantité {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 1.25em;
-    font-size: 0.9em;
-}
-
-#bouton-moins, #bouton-plus {
-    color: black;
-    width: 32px;
-    height: 32px;
-    border-radius: 20px;
-    font-weight: bold;
-}
-
-#bouton-moins {
-    background: $rouge-type;
-}
-
-#bouton-plus {
-    background: $vert-type;
+    margin: 0 1em;
 }
