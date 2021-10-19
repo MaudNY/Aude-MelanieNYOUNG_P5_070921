@@ -11193,7 +11193,11 @@ a, ul {
   text-align: center;
   margin: 1.25em 0 1.25em 0;
 }
-.section-produits .col-3 {
+.section-produits #liste-produits {
+  display: flex;
+  justify-content: center;
+}
+.section-produits #liste-produits .col-3 {
   margin-bottom: 1.55em;
 }
 
