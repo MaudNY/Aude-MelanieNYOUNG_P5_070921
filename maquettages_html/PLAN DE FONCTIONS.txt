@@ -1,22 +1,24 @@
-PANIER HEADER
-Fonction localStorage
-Fonction vignette nombre items apparaît une fois que n = 1
-Fonction n + 1 à chaque clic sur bouton "Ajouter au panier"
-Fonction n + 1 à chaque clic sur bouton "Bouton +"
-Fonction n - 1 à chaque clic sur bouton "Bouton -"
+FONCTIONS COMMUNES
 
-PAGE D'ACCUEIL
-Fonction Chargement liste de produits quand le serveur est ouvert >> au chargement de la page
->> Si serveur fermé >> apparition message d'excuse + invitation à réessayer plus tard
+- HEADER : Vignette Panier
+Apparition de la vignette lorsque nbre d'items n = 1
+Fonction n + 1 à chaque clic sur bouton "Ajouter au panier"
+
+
+FONCTIONS PAGE D'ACCUEIL
+Pour chaque produit :
+    - récupérer les données du back-end
+    - créer l'élément du DOM
+    - l'injecter dans le DOM
 
 PAGE PRODUITS
-Fonction chargement photo produit >> au chargement de la page
-Fonction chargement description produit >> au chargement de la page
-Fonction chargement choix produit >> au chargement de la page
-Fonction chargement prix produit >> au chargement de la page
-Fonction chargement qté produit >> au chargement de la page
->> Si serveur fermé >> apparition message d'excuse + invitation à réessayer plus tard
+- récupérer l'ID dans l'URL
+- récupérer les données du back-end
+- créer l'élément du DOM
+- l'injecter dans le DOM
 
+
+...à corriger après page d'accueil + page produit OK...
 PAGE PANIER
 Fonction chargement photo produit (en fonction de l'objet sélectionné) >> au chargement de la page
 Fonction chargement description produit (en fonction de l'objet sélectionné) >> au chargement de la page
