@@ -18,24 +18,3 @@
         margin: 2em 0;
     }
 }
-
-/* Boutons QUANTITE */
-
-#bouton-moins, #bouton-plus {
-    display: flex;
-    justify-content: center;
-    margin: 0 1.25em;
-    width: 32px;
-    height: 32px;
-    border-radius: 20px;
-    font-size: 0.9em;
-    font-weight: bold; 
-}
-
-#bouton-moins {
-    background: $rouge-type;
-}
-
-#bouton-plus {
-    background: $vert-type;
-}

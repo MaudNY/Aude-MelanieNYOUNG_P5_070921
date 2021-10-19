@@ -11114,26 +11114,6 @@ a, ul {
   margin: 2em 0;
 }
 
-/* Boutons QUANTITE */
-#bouton-moins, #bouton-plus {
-  display: flex;
-  justify-content: center;
-  margin: 0 1.25em;
-  width: 32px;
-  height: 32px;
-  border-radius: 20px;
-  font-size: 0.9em;
-  font-weight: bold;
-}
-
-#bouton-moins {
-  background: #FF3B3B;
-}
-
-#bouton-plus {
-  background: #00B050;
-}
-
 .card {
   border-radius: 0px 50px;
   overflow: hidden;
@@ -11217,7 +11197,7 @@ a, ul {
   margin-bottom: 1.55em;
 }
 
-/* Formulaires FICHE PRODUIT */
+/* Formulaire PAGE PRODUIT - Options lentille */
 label {
   font-weight: bold;
 }
@@ -11250,7 +11230,8 @@ label {
 }
 
 .prix {
-  font-size: 1.75em;
+  text-align: center;
+  font-size: 2em;
   font-weight: bold;
 }
 
