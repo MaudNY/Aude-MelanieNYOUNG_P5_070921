@@ -62,11 +62,7 @@
                             </p>
                         </form>
                     </div>
-                    <div class="col-2 catégorie-tableau quantité-produits-panier">
-                        <input type="button" id="bouton-moins" value="-">
-                        <span>1</span>
-                        <input type="button" id="bouton-plus" value="+">
-                    </div>
+                    <div class="col-2 catégorie-tableau quantité-produits-panier"><span>1</span></div>
                     <div class="col-2 catégorie-tableau">499,00 €</div>
                     <div class="ligne-séparation ligne-séparation--page-panier"></div>
                 </div>
@@ -92,21 +88,20 @@
                 <form class="tableau-coordonnées" method="post" action="à-définir">
                     <div class="row">
                         <div class="col-6"></div>
-                        <div class="col-3 fond-clair"><input type="text" name="prenom" id="prenom" placeholder="Prénom" required/></div>
-                        <div class="col-3 fond-clair"><input type="text" name="nom" id="nom" placeholder="Nom" required/></div>
+                        <div class="col-3 fond-clair"><input type="text" name="prenom" id="firstName" placeholder="Prénom" required/></div>
+                        <div class="col-3 fond-clair"><input type="text" name="nom" id="lastName" placeholder="Nom" required/></div>
                     </div>
                     <div class="row">
                         <div class="col-6"></div>
-                        <div class="col-6 fond-clair"><input type="text" name="adresse" id="adresse" placeholder="Numéro, nom de rue (Ex : 8, avenue Charles Fitte)" required/></div>
+                        <div class="col-6 fond-clair"><input type="text" name="adresse" id="adress" placeholder="Numéro, nom de rue (Ex : 8, avenue Charles Fitte)" required/></div>
                     </div>
                     <div class="row">
                         <div class="col-6"></div>
-                        <div class="col-6 fond-clair"><input type="text" name="complement-adresse" id="complement-adresse" placeholder="Complément d'adresse (bâtiment, code d'accès à l'immeuble, etc.)"/></div>
+                        <div class="col-6 fond-clair"><input type="text" name="complement-adresse" id="city" placeholder="Code postal et Ville"/></div>
                     </div>
                     <div class="row">
                         <div class="col-6"></div>
-                        <div class="col-3 fond-clair"><input type="text" name="code-postal" id="code-postal" placeholder="Code Postal" required/></div>
-                        <div class="col-3 fond-clair"><input type="text" name="ville" id="ville" placeholder="Ville" required/></div>
+                        <div class="col-6 fond-clair"><input type="text" name="code-postal" id="email" placeholder="Adresse e-mail (Ex : alexandre.rouvain@gmail.com)" required/></div>
                     </div>
                 </form>
 
