@@ -3,38 +3,26 @@
 
 // LISTE PRODUITS //
 
-async function fetchProduits() {
+async function fetchProducts() {
     const response = await fetch(`http://localhost:3000/api/cameras/`);
-    const produits = await response.json();
+    const products = await response.json();
 
-    return produits;
+    return products;
 }
 
-async function recupererProduits() {
-    const produits = await fetchProduits();
-    console.log(produits);
-    const $listeProduits = document.querySelector('#liste-produits');
-
-    for (produit of produits) {
-        const $card = creerCarteAPartirDeProduit(produit);
-        $listeProduits.append($card);
-    }
-}
-
-function creerCarteAPartirDeProduit(produit) {
-    console.log(produit);
-    const prix = produit.price / 100;
+const createProduct = (product) => {
+    console.log(product);
+    const price = product.price/100;
 
     const $card = document.createElement('div');
     $card.className = 'col-3';
-
     $card.innerHTML = `
         <div class="card">
-            <a href="fiche-produit.html?productId=${produit._id}" class="stretched-link">
-                <img class="card-img-top" src="${produit.imageUrl}" alt="Appareil photo ${produit.name}"/>
+            <a href="fiche-produit.html?productId=${product._id}" class="stretched-link">
+                <img class="card-img-top" src="${product.imageUrl}" alt="Appareil photo ${product.name}"/>
                 <div class="card-body">
-                    <h3 class="card-title">${produit.name}</h3>
-                    <p class="card-price">${prix.toFixed(2)} €</p>
+                    <h3 class="card-title">${product.name}</h3>
+                    <p class="card-price">${price.toFixed(2)} €</p>
                 </div>
             </a>
         </div>
@@ -43,6 +31,16 @@ function creerCarteAPartirDeProduit(produit) {
     return $card;
 }
 
-window.addEventListener('load', function () {
-    recupererProduits();
-});
+async function getProducts() {
+    const products = await fetchProducts();
+    const $productList = document.querySelector('#liste-produits');
+
+    for (product of products) {
+        const $card = createProduct(product);
+        $productList.append($card);
+    }
+}
+
+window.addEventListener ('load', function() {
+    getProducts();
+})
