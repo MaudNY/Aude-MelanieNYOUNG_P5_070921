@@ -18,7 +18,7 @@ const createProduct = (product) => {
     $card.className = 'col-3';
     $card.innerHTML = `
         <div class="card">
-            <a href="fiche-produit.html?productId=${product._id}" class="stretched-link">
+            <a href="page-produit.html?productId=${product._id}" class="stretched-link">
                 <img class="card-img-top" src="${product.imageUrl}" alt="Appareil photo ${product.name}"/>
                 <div class="card-body">
                     <h3 class="card-title">${product.name}</h3>
