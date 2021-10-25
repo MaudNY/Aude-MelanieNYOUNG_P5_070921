@@ -7,7 +7,7 @@ async function fetchProducts() {
     const response = await fetch(`http://localhost:3000/api/cameras/`);
     const products = await response.json();
 
-    return products;
+    return products;  
 }
 
 const createProduct = (product) => {

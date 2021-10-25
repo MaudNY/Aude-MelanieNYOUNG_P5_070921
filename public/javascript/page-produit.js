@@ -9,17 +9,19 @@ async function getURLId() {
 
 // 2 Fonction prenant en paramètre un id de produit, récupère le détail d'un produit du backend et retourne le produit, en format JSON
 
-async function fetchProductById(productId) {
+async function fetchProductById() {
     const ID = await getURLId();
     const response = await fetch(`http://localhost:3000/api/cameras/${ID}`);
-    const productById = await response.json;
+    const productById = await response.json();
+
+    console.log(productById);
 
     return productById;
 }
 
 // 3 Fonction qui prend en paramètre un produit (en format JSON) et génère le DOM du produit, et l'injecte dans le DOM du site
 
-const createPageProduct = (singleProduct) => {
+const createProductDOM = (singleProduct) => {
     console.log(singleProduct);
     const price = singleProduct.price/100;
 
@@ -34,19 +36,48 @@ const createPageProduct = (singleProduct) => {
                 <p>
                     <label for="lens">Type de lentille</label><br />
                     <select name="lens" id="lens" class="form-control">
-                        <option value="0">35mm 1.4</option>
-                        <option value="1">50mm 1.6</option>
+                        <option value="0">${singleProduct.lenses[0]}</option>
+                        <option value="1">${singleProduct.lenses[1]}</option>
                     </select>
                 </p>
-                </form>
+            </form>
         </div>
         <div class="col-2 achat-produit">
-            <p class="prix">${price.toFixed(2)}</p>
+            <p class="prix">${price.toFixed(2)}€</p>
             <div class="bouton-type"><input type="submit" value="Ajouter au panier"></div>
         </div>
     `;
 
+    const $select = $productSheet.querySelector('#lens');
+
+    for (let lens of singleProduct.lenses) { // lens = création de variable à ce moment-là
+        console.log(lens);
+        $select.append(createLensOption(lens));
+    }
+
     return $productSheet;
 }
 
-// 4 Créer une fonction qui 1) Récupère l'id du produit depuis l'URL (en utilisant la fonction 1) 2) Récupère les détails du produit depuis le backend (en exécutant la fonction 2 avec l'id du produit récupéré juste avant) 3) Génère et injecte le DOM du produit dans la page (en utilisant la fonction 3, avec le produit sous format JSON récupérer juste avant)
+const createLensOption = (lens) => {
+    const $option = document.createElement('option');
+    // $option.setAttribute('value');
+    $option.innerHTML(lens);
+
+    return $option;
+}
+
+// 4 Créer une fonction qui 2) Récupère les détails du produit depuis le backend (en exécutant la fonction 2 avec l'id du produit récupéré juste avant) 3) Génère et injecte le DOM du produit dans la page (en utilisant la fonction 3, avec le produit sous format JSON récupérer juste avant)
+
+async function showProduct() {
+    const product = await fetchProductById(); // récupération objet JSON
+    const $product = await createProductDOM(product); // $ = convention pour signifier élément du DOM
+
+    const $singleProduct = document.querySelector('#single-product');
+    $singleProduct.append($product);
+
+    return $product;
+}
+
+window.addEventListener('load', function() {
+    showProduct();
+})
