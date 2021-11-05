@@ -66,7 +66,9 @@ const createLensOption = (lens) => {
     return $option;
 }
 
-// 4 Créer une fonction qui 2) Récupère les détails du produit depuis le backend (en exécutant la fonction 2 avec l'id du produit récupéré juste avant) 3) Génère et injecte le DOM du produit dans la page (en utilisant la fonction 3, avec le produit sous format JSON récupérer juste avant)
+/* 4 Créer une fonction qui
+2) Récupère les détails du produit depuis le backend (en exécutant la fonction 2 avec l'id du produit récupéré juste avant)
+3) Génère et injecte le DOM du produit dans la page (en utilisant la fonction 3, avec le produit sous format JSON récupérer juste avant)*/
 
 async function showProduct() {
     const product = await fetchProductById(); // récupération objet JSON
