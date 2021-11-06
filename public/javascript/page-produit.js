@@ -36,8 +36,7 @@ const createProductDOM = (singleProduct) => {
                 <p>
                     <label for="lens">Type de lentille</label><br />
                     <select name="lens" id="lens" class="form-control">
-                        <option value="0">${singleProduct.lenses[0]}</option>
-                        <option value="1">${singleProduct.lenses[1]}</option>
+
                     </select>
                 </p>
             </form>

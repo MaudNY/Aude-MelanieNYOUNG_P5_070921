@@ -4,12 +4,10 @@ async function URLId () {
     const params = await (new URL(document.location)).searchParams;
     const URLId = params.get("ID");
 
-    console.log("ID Produit : " + URLId);
-
     return URLId;
 }
 
-// Créer l'objet JSON du produit concerné (via l'ID de l'URL)
+// Récupérer l'objet JSON du produit concerné (via l'ID de l'URL)
 
 async function getJSONObject () {
     const ID = await URLId();
@@ -40,7 +38,7 @@ function createProductDOM(product) {
         </div>
         <div class="col-2 achat-produit">
             <p class="prix">${price.toFixed(2)}€</p>
-            <div class="bouton-type"><input type="submit" value="Ajouter au panier"></div>
+            <div class="bouton-type" id="bouton-ajout-panier"><input type="submit" value="Ajouter au panier"></div>
         </div>
     `;
 
@@ -62,7 +60,7 @@ async function addLensOption(value) {
 
     const $lensOption = document.createElement("option");
     $lensOption.setAttribute("value", index);
-    $lensOption.textContent = value;
+    $lensOption.innerHTML = value;
     console.log($lensOption);
 
     return $lensOption;
@@ -84,4 +82,32 @@ async function showProduct() {
 
 window.addEventListener('load', function() {
     showProduct();
+});
+
+
+
+
+// HEADER - n apparaît quand n <= 1
+
+function itemsCount() {
+
+}
+
+// HEADER - La vignette violette apparaît quand n <= 1
+
+
+
+// HEADER - A chaque clic sur bouton "Ajouter au panier", n++
+const $ajoutPanier = document.querySelector("#bouton-ajout-panier");
+$ajoutPanier.addEventListener('click', function() {
+    
+});
+
+
+const $vignettePanier = document.getElementById("#vignette-panier");
+const $panier = document.getElementById("#panier");
+
+
+window.addEventListener('click', function() {
+
 });

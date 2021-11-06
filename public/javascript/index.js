@@ -1,6 +1,3 @@
-// HEADER - Ajout item panier //
-
-
 // LISTE PRODUITS //
 
 async function fetchProducts() {
