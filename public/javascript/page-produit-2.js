@@ -11,12 +11,10 @@ async function URLId () {
 
 // Créer l'objet JSON du produit concerné (via l'ID de l'URL)
 
-async function createJSONObject () {
+async function getJSONObject () {
     const ID = await URLId();
     const response = await fetch(`http://localhost:3000/api/cameras/${ID}`);
     const productData = await response.json();
-
-    console.log(productData);
 
     return productData;
 }
@@ -36,10 +34,7 @@ function createProductDOM(product) {
             <form method="post" action="a-définir" class="form-option-lentille">
                 <p>
                     <label for="lens">Type de lentille</label><br />
-                    <select name="lens" id="lens" class="form-control">
-                        <option value="0">${product.lenses[0]}</option>
-                        <option value="1">${product.lenses[1]}</option>
-                    </select>
+                    <select name="lens" id="lens" class="form-control"></select>
                 </p>
             </form>
         </div>
@@ -49,13 +44,34 @@ function createProductDOM(product) {
         </div>
     `;
 
+    const $select = $productInfo.querySelector("#lens");
+
+    for (let value of product.lenses) {
+        $select.append(addLensOption(value));
+    }
+
     return $productInfo;
 }
 
-// Afficher le produit...
+// (Dans l'élément "div" créé) Ajouter les options de lentilles
+async function addLensOption(value) {
+    const product = await getJSONObject();
+    const lenses = await product.lenses;
+
+    const index = lenses.indexOf(value);
+
+    const $lensOption = document.createElement("option");
+    $lensOption.setAttribute("value", index);
+    $lensOption.textContent = value;
+    console.log($lensOption);
+
+    return $lensOption;
+}
+
+// Afficher le produit
 
 async function showProduct() {
-    const product = await createJSONObject();
+    const product = await getJSONObject();
     const $productDOM = await createProductDOM(product);
 
     const $singleProduct = document.querySelector("#single-product");
@@ -64,7 +80,7 @@ async function showProduct() {
     return $singleProduct;
 }
 
-// ...au chargement de la page
+// Afficher le produit au chargement de la page
 
 window.addEventListener('load', function() {
     showProduct();
