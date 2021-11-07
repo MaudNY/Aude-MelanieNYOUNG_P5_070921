@@ -1,7 +1,7 @@
 // Récupérer l'ID de l'URL
 
 async function URLId () {
-    const params = await (new URL(document.location)).searchParams;
+    const params = (new URL(document.location)).searchParams;
     const URLId = params.get("ID");
 
     return URLId;
@@ -38,7 +38,7 @@ function createProductDOM(product) {
         </div>
         <div class="col-2 achat-produit">
             <p class="prix">${price.toFixed(2)}€</p>
-            <div class="bouton-type" id="bouton-ajout-panier"><input type="submit" value="Ajouter au panier"></div>
+            <div class="bouton-type bouton-ajout-panier"><input type="submit" value="Ajouter au panier"></div>
         </div>
     `;
 
@@ -56,7 +56,7 @@ async function addLensOption(value) {
     const product = await getJSONObject();
     const lenses = await product.lenses;
 
-    const index = lenses.indexOf(value);
+    const index = await lenses.indexOf(value);
 
     const $lensOption = document.createElement("option");
     $lensOption.setAttribute("value", index);
@@ -70,7 +70,7 @@ async function addLensOption(value) {
 
 async function showProduct() {
     const product = await getJSONObject();
-    const $productDOM = await createProductDOM(product);
+    const $productDOM = createProductDOM(product);
 
     const $singleProduct = document.querySelector("#single-product");
     $singleProduct.append($productDOM);
@@ -85,29 +85,30 @@ window.addEventListener('load', function() {
 });
 
 
+// HEADER - Créer la vignette du panier (élément "span")
 
+function createCartVignette() {
+    const $cartVignette = document.createElement("span");
+    $cartVignette.className = "nombre-items-panier";
+    $cartVignette.setAttribute("id", "vignette-panier");
+    $cartVignette.textContent = "0";
 
-// HEADER - n apparaît quand n <= 1
+    const $panier = document.querySelector("#panier");
+    $panier.append($cartVignette);
 
-function itemsCount() {
-
+    return $cartVignette;
 }
 
-// HEADER - La vignette violette apparaît quand n <= 1
+createCartVignette();
+
+// HEADER - Au clic sur Bouton "Ajout panier", n++
+
+const cartButton = document.getElementsByClassName("bouton-ajout-panier");
 
 
 
-// HEADER - A chaque clic sur bouton "Ajouter au panier", n++
-const $ajoutPanier = document.querySelector("#bouton-ajout-panier");
-$ajoutPanier.addEventListener('click', function() {
-    
-});
+// Déclencheur 1 : A chaque clic sur bouton "Ajouter au panier", 
 
 
-const $vignettePanier = document.getElementById("#vignette-panier");
-const $panier = document.getElementById("#panier");
 
 
-window.addEventListener('click', function() {
-
-});
