@@ -38,7 +38,7 @@ function createProductDOM(product) {
         </div>
         <div class="col-2 achat-produit">
             <p class="prix">${price.toFixed(2)}€</p>
-            <div class="bouton-type bouton-ajout-panier"><input type="submit" value="Ajouter au panier"></div>
+            <button type="submit" class="bouton-type bouton-ajout-panier">Ajouter au panier</button>
         </div>
     `;
 
@@ -48,18 +48,19 @@ function createProductDOM(product) {
         $select.append(addLensOption(value));
     }
 
+    const $boutonAjoutPanier = $productInfo.querySelector(".bouton-ajout-panier");
+
+    $boutonAjoutPanier.addEventListener("click", function() {
+        incrementCartVignette();
+    })
+
     return $productInfo;
 }
 
 // (Dans l'élément "div" créé) Ajouter les options de lentilles
-async function addLensOption(value) {
-    const product = await getJSONObject();
-    const lenses = await product.lenses;
-
-    const index = await lenses.indexOf(value);
-
+function addLensOption(value) {
     const $lensOption = document.createElement("option");
-    $lensOption.setAttribute("value", index);
+    $lensOption.setAttribute("value", value);
     $lensOption.innerHTML = value;
     console.log($lensOption);
 
@@ -82,6 +83,7 @@ async function showProduct() {
 
 window.addEventListener('load', function() {
     showProduct();
+    cartVignetteAppears();
 });
 
 
@@ -97,26 +99,23 @@ function createCartVignette() {
     return $cartVignette;
 }
 
-createCartVignette();
-
 // HEADER - Déclencheur 1 : Au clic sur Bouton "Ajout panier", 0++
 
-const cartButton = document.getElementsByClassName("bouton-ajout-panier");
+function incrementCartVignette() {
+    const $cartVignette = document.querySelector("#vignette-panier");
+    console.log($cartVignette);
+    let currentValue = parseFloat($cartVignette.textContent);
 
+    currentValue++;
 
+    $cartVignette.textContent = currentValue;
+    
+}
 
 // HEADER - Déclencheur 2 : Lorsque cartVignette.textContent >= 1, la vignette apparaît
 
 function cartVignetteAppears() {
     const $cartVignette = createCartVignette();
     const $panier = document.querySelector("#panier");
-    if ($cartVignette.textContent >= 1) {
-        $panier.append($cartVignette);
-    }
+    $panier.append($cartVignette);
 }
-
-cartVignetteAppears();
-
-
-
-
