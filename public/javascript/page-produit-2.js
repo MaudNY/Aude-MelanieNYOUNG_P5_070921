@@ -91,23 +91,31 @@ function createCartVignette() {
     const $cartVignette = document.createElement("span");
     $cartVignette.className = "nombre-items-panier";
     $cartVignette.setAttribute("id", "vignette-panier");
-    $cartVignette.textContent = "0";
-
-    const $panier = document.querySelector("#panier");
-    $panier.append($cartVignette);
+    $cartVignette.textContent = 0;
+    console.log($cartVignette);
 
     return $cartVignette;
 }
 
 createCartVignette();
 
-// HEADER - Au clic sur Bouton "Ajout panier", n++
+// HEADER - Déclencheur 1 : Au clic sur Bouton "Ajout panier", 0++
 
 const cartButton = document.getElementsByClassName("bouton-ajout-panier");
 
 
 
-// Déclencheur 1 : A chaque clic sur bouton "Ajouter au panier", 
+// HEADER - Déclencheur 2 : Lorsque cartVignette.textContent >= 1, la vignette apparaît
+
+function cartVignetteAppears() {
+    const $cartVignette = createCartVignette();
+    const $panier = document.querySelector("#panier");
+    if ($cartVignette.textContent >= 1) {
+        $panier.append($cartVignette);
+    }
+}
+
+cartVignetteAppears();
 
 
 
