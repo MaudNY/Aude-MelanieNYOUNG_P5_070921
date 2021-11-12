@@ -11100,15 +11100,9 @@ a, ul {
   margin: 0.75em 0;
   background: linear-gradient(to bottom right, #E8870D, #8F5BFE);
   border-radius: 20px;
-}
-.bouton-type input {
   color: white;
   font-weight: bold;
-  background: transparent;
   border: none;
-}
-.bouton-type a {
-  color: white;
 }
 .bouton-type--commander {
   margin: 2em 0;

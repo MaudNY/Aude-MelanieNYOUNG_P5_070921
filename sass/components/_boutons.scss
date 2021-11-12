@@ -5,15 +5,9 @@
     margin: 0.75em 0;
     background: $couleur-dégradée;
     border-radius: 20px;
-    input {
-        color: white;
-        font-weight: bold;
-        background: transparent;
-        border: none;
-    }
-    a {
-        @include couleur-lien (white);
-    }
+    color: white;
+    font-weight: bold;
+    border: none;
     &--commander {
         margin: 2em 0;
     }
