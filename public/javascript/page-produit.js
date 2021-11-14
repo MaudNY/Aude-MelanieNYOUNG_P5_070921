@@ -62,7 +62,6 @@ function addLensOption(value) {
     const $lensOption = document.createElement("option");
     $lensOption.setAttribute("value", value);
     $lensOption.innerHTML = value;
-    console.log($lensOption);
 
     return $lensOption;
 }
@@ -81,8 +80,8 @@ async function showProduct() {
 
 // Afficher le produit au chargement de la page
 
-window.addEventListener('load', function() {
-    showProduct();
+window.addEventListener('load',  async function() {
+    await showProduct();
     cartVignetteAppears();
 });
 
@@ -94,7 +93,6 @@ function createCartVignette() {
     $cartVignette.className = "nombre-items-panier";
     $cartVignette.setAttribute("id", "vignette-panier");
     $cartVignette.textContent = 0;
-    console.log($cartVignette);
 
     return $cartVignette;
 }

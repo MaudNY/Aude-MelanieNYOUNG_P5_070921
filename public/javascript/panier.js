@@ -1,34 +1,36 @@
-// Récupérer l'ID de l'URL
+// Récupérer le produit à envoyer dans le Local Storage :
 
-async function URLId () {
-    const params = (new URL(document.location)).searchParams;
-    const URLId = params.get("ID");
+async function getSelectedProduct() {
+    const product = await getJSONObject();
+    let selectedProduct = {
+        productImage : product.imageUrl,
+        productName : product.name,
+        productDescription : product.description,
+        productLens : "A CONFIGURER",
+        productPrice : (product.price/100).toFixed(2),
+    };
 
-    return URLId;
+    return selectedProduct;
 }
 
-// Récupérer l'objet JSON du produit concerné (via l'ID de l'URL)
+//Déclarer la variable dans laquelle on va stocker les différents produits
+let cartLine = JSON.parse(localStorage.getItem("product"));
 
-async function getJSONObject () {
-    const ID = await URLId();
-    const response = await fetch(`http://localhost:3000/api/cameras/${ID}`);
-    const productData = await response.json();
+/* Fonction envoi classe produit :
+Si storage.length = 0 --> création de tableau
+Sinon ajout d'une classe produit au tableau */
 
-    return productData;
+async function sendToLocalStorage() {
+    if (localStorage.length === 0) {
+        cartLine = [];
+        cartLine.push(await getSelectedProduct());
+        localStorage.setItem("product", JSON.stringify(cartLine));
+    } else {
+        cartLine.push(await getSelectedProduct());
+        localStorage.setItem("product", JSON.stringify(cartLine));
+    }
 }
 
-//Mettre l'option "lentille" choisie par l'utilisateur dans une variable
-function selectedLens() {
-    const $singleProduct = document.querySelector("#single-product");
-    console.log($singleProduct);
-}
+sendToLocalStorage();
 
-window.addEventListener('load', function() {
-    selectedLens();
-});
-
-
-//Mettre les caractéristiques "produit ajouté au panier" à envoyer dans le panier dans une variable
-
-/*Si 0 clé panier --> init tableau vide
-Sinoon --> ajout d'une nouvelle clé*/
+// Au clic sur le bouton "Ajouter au panier" --> envoi Classe Produit dans localStorage
