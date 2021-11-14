@@ -92,25 +92,12 @@ function createCartVignette() {
     const $cartVignette = document.createElement("span");
     $cartVignette.className = "nombre-items-panier";
     $cartVignette.setAttribute("id", "vignette-panier");
-    $cartVignette.textContent = 0;
+    $cartVignette.innerHTML = cartLine.length;
 
     return $cartVignette;
 }
 
-// HEADER - Déclencheur 1 : Au clic sur Bouton "Ajout panier", 0++
-
-function incrementCartVignette() {
-    const $cartVignette = document.querySelector("#vignette-panier");
-    console.log($cartVignette);
-    let currentValue = parseFloat($cartVignette.textContent);
-
-    currentValue++;
-
-    $cartVignette.textContent = currentValue;
-    
-}
-
-// HEADER - Déclencheur 2 : Lorsque cartVignette.textContent >= 1, la vignette apparaît
+// HEADER - Lorsque cartVignette.textContent >= 1, la vignette apparaît
 
 function cartVignetteAppears() {
     const $cartVignette = createCartVignette();
