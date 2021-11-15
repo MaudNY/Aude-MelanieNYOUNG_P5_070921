@@ -8,7 +8,6 @@ async function fetchProducts() {
 }
 
 const createProduct = (product) => {
-    console.log(product);
     const price = product.price/100;
 
     const $card = document.createElement('div');
@@ -36,6 +35,32 @@ async function getProducts() {
         const $card = createProduct(product);
         $productList.append($card);
     }
+}
+
+// HEADER - Créer la vignette du panier (élément "span")
+
+function createCartVignette() {
+    const $cartVignette = document.createElement("span");
+    $cartVignette.className = "nombre-items-panier";
+    $cartVignette.setAttribute("id", "vignette-panier");
+
+    if (localStorage.length == 0) {
+        $cartVignette.innerHTML = 0;
+    } else {
+        $cartVignette.innerHTML = cartLine.length;
+    }
+
+    return $cartVignette;
+}
+
+// HEADER - Lorsque la vignette "nombre d'items" du panier apparaît (n = 0)
+
+function cartVignetteAppears() {
+    const $cartVignette = createCartVignette();
+    const $panier = document.querySelector("#panier");
+    $panier.append($cartVignette);
+
+    return $cartVignette;
 }
 
 window.addEventListener ('load', function() {

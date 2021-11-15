@@ -30,5 +30,3 @@ async function sendToLocalStorage() {
         localStorage.setItem("product", JSON.stringify(cartLine));
     }
 }
-
-// Au clic sur le bouton "Ajouter au panier" --> envoi Classe Produit dans localStorage

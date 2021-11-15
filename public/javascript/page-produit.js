@@ -79,21 +79,13 @@ async function showProduct() {
     return $singleProduct;
 }
 
-// Afficher le produit au chargement de la page
-
-window.addEventListener('load',  async function() {
-    await showProduct();
-    cartVignetteAppears();
-});
-
-
 // HEADER - Créer la vignette du panier (élément "span")
 
 function createCartVignette() {
     const $cartVignette = document.createElement("span");
     $cartVignette.className = "nombre-items-panier";
     $cartVignette.setAttribute("id", "vignette-panier");
-    
+
     if (localStorage.length == 0) {
         $cartVignette.innerHTML = 0;
     } else {
@@ -126,3 +118,9 @@ function incrementCartVignette() {
 
     return $cartVignette;
 }
+
+// EVENT LISTENER - Au chargement de la page...
+
+window.addEventListener('load',  async function() {
+    await showProduct();
+});
