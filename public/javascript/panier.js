@@ -31,6 +31,4 @@ async function sendToLocalStorage() {
     }
 }
 
-sendToLocalStorage();
-
 // Au clic sur le bouton "Ajouter au panier" --> envoi Classe Produit dans localStorage

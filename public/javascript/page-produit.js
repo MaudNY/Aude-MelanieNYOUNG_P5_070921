@@ -51,6 +51,7 @@ function createProductDOM(product) {
     const $boutonAjoutPanier = $productInfo.querySelector(".bouton-ajout-panier");
 
     $boutonAjoutPanier.addEventListener("click", function() {
+        sendToLocalStorage();
         incrementCartVignette();
     })
 
@@ -92,15 +93,36 @@ function createCartVignette() {
     const $cartVignette = document.createElement("span");
     $cartVignette.className = "nombre-items-panier";
     $cartVignette.setAttribute("id", "vignette-panier");
-    $cartVignette.innerHTML = cartLine.length;
+    
+    if (localStorage.length == 0) {
+        $cartVignette.innerHTML = 0;
+    } else {
+        $cartVignette.innerHTML = cartLine.length;
+    }
 
     return $cartVignette;
 }
 
-// HEADER - Lorsque cartVignette.textContent >= 1, la vignette apparaît
+// HEADER - Lorsque la vignette "nombre d'items" du panier apparaît (n = 0)
 
 function cartVignetteAppears() {
     const $cartVignette = createCartVignette();
     const $panier = document.querySelector("#panier");
     $panier.append($cartVignette);
+
+    return $cartVignette;
+}
+
+// HEADER - Le nombre d'items dans la vignette du panier s'incrémente de 1 à chaque clic sur le bouton "Ajouter au panier"
+
+function incrementCartVignette() {
+    const $cartVignette = document.querySelector("#vignette-panier");
+    console.log($cartVignette);
+    let currentValue = parseFloat($cartVignette.textContent);
+
+    currentValue++;
+
+    $cartVignette.textContent = currentValue;
+
+    return $cartVignette;
 }
