@@ -18,7 +18,6 @@ async function getSelectedProduct(selectedLens) {
 
 function getDataFromCartOnLS() {
     const dataFromLS = JSON.parse(localStorage.getItem("product"));
-    console.log(dataFromLS);
 
     if (dataFromLS === null) {
         const initialCart = [];
