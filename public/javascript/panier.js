@@ -2,6 +2,7 @@
 
 async function getSelectedProduct() {
     const product = await getJSONObject();
+
     let selectedProduct = {
         productImage : product.imageUrl,
         productName : product.name,

@@ -51,6 +51,8 @@ function createProductDOM(product) {
     const $boutonAjoutPanier = $productInfo.querySelector(".bouton-ajout-panier");
 
     $boutonAjoutPanier.addEventListener("click", function() {
+        const $selectedLens = $select.value;
+        console.log($selectedLens);
         sendToLocalStorage();
         incrementCartVignette();
     })
@@ -109,7 +111,6 @@ function cartVignetteAppears() {
 
 function incrementCartVignette() {
     const $cartVignette = document.querySelector("#vignette-panier");
-    console.log($cartVignette);
     let currentValue = parseFloat($cartVignette.textContent);
 
     currentValue++;
