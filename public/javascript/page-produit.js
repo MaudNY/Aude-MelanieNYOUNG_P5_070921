@@ -51,9 +51,9 @@ function createProductDOM(product) {
     const $boutonAjoutPanier = $productInfo.querySelector(".bouton-ajout-panier");
 
     $boutonAjoutPanier.addEventListener("click", function() {
-        const $selectedLens = $select.value;
-        console.log($selectedLens);
-        sendToLocalStorage();
+        const selectedLens = $select.value;
+        console.log(selectedLens);
+        sendToLocalStorage(selectedLens);
         incrementCartVignette();
     })
 
@@ -79,32 +79,6 @@ async function showProduct() {
     $singleProduct.append($productDOM);
 
     return $singleProduct;
-}
-
-// HEADER - Créer la vignette du panier (élément "span")
-
-function createCartVignette() {
-    const $cartVignette = document.createElement("span");
-    $cartVignette.className = "nombre-items-panier";
-    $cartVignette.setAttribute("id", "vignette-panier");
-
-    if (localStorage.length == 0) {
-        $cartVignette.innerHTML = 0;
-    } else {
-        $cartVignette.innerHTML = cartLine.length;
-    }
-
-    return $cartVignette;
-}
-
-// HEADER - Lorsque la vignette "nombre d'items" du panier apparaît (n = 0)
-
-function cartVignetteAppears() {
-    const $cartVignette = createCartVignette();
-    const $panier = document.querySelector("#panier");
-    $panier.append($cartVignette);
-
-    return $cartVignette;
 }
 
 // HEADER - Le nombre d'items dans la vignette du panier s'incrémente de 1 à chaque clic sur le bouton "Ajouter au panier"

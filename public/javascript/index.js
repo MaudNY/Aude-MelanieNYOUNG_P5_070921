@@ -47,7 +47,7 @@ function createCartVignette() {
     if (localStorage.length == 0) {
         $cartVignette.innerHTML = 0;
     } else {
-        $cartVignette.innerHTML = cartLine.length;
+        $cartVignette.innerHTML = getDataFromCartOnLS().length;
     }
 
     return $cartVignette;

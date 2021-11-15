@@ -1,33 +1,47 @@
-// Récupérer le produit à envoyer dans le Local Storage :
+// Récupérer le produit à envoyer dans le Local Storage
 
-async function getSelectedProduct() {
+async function getSelectedProduct(selectedLens) {
     const product = await getJSONObject();
 
     let selectedProduct = {
         productImage : product.imageUrl,
         productName : product.name,
         productDescription : product.description,
-        productLens : "A CONFIGURER",
+        productLens : selectedLens,
         productPrice : (product.price/100).toFixed(2),
     };
 
     return selectedProduct;
 }
 
-//Déclarer la variable dans laquelle on va stocker les différents produits
-let cartLine = JSON.parse(localStorage.getItem("product"));
+// Fonction qui récupère le contenu du panier dans le Local Storage
+
+function getDataFromCartOnLS() {
+    const dataFromLS = JSON.parse(localStorage.getItem("product"));
+    console.log(dataFromLS);
+
+    if (dataFromLS === null) {
+        const initialCart = [];
+        localStorage.setItem("product", JSON.stringify(initialCart));
+        return initialCart;
+    }
+
+    return dataFromLS;
+}
 
 /* Fonction envoi classe produit :
 Si storage.length = 0 --> création de tableau
 Sinon ajout d'une classe produit au tableau */
 
-async function sendToLocalStorage() {
-    if (localStorage.length === 0) {
-        cartLine = [];
-        cartLine.push(await getSelectedProduct());
-        localStorage.setItem("product", JSON.stringify(cartLine));
+async function sendToLocalStorage(selectedLens) {    
+    let keyProduct = JSON.parse(localStorage.getItem("product"));
+
+    if (keyProduct == null) {
+        keyProduct = [];
+        keyProduct.push(await getSelectedProduct(selectedLens));
+        localStorage.setItem("product", JSON.stringify(keyProduct));
     } else {
-        cartLine.push(await getSelectedProduct());
-        localStorage.setItem("product", JSON.stringify(cartLine));
+        keyProduct.push(await getSelectedProduct(selectedLens));
+        localStorage.setItem("product", JSON.stringify(keyProduct));
     }
 }
