@@ -4,7 +4,8 @@ async function getSelectedProduct(selectedLens) {
     const product = await getJSONObject();
 
     let selectedProduct = {
-        productImage : product.imageUrl,
+        productId : product._id,
+        productImageUrl : product.imageUrl,
         productName : product.name,
         productDescription : product.description,
         productLens : selectedLens,
