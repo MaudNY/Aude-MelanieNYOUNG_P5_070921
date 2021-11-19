@@ -22,7 +22,7 @@ function createCartLine (item) {
 // Pour chaque élément du tableau "Produit" dans le LS, créer une ligne HTML de panier
 
 function createCartTable () {
-    const $tableauLigneUn = document.querySelector(".tableau-ligne--1");
+    const $tableauLigneUn = document.querySelector(".tableau-premiere-ligne");
 
     for (let item of getDataFromCartOnLS()) {
         $tableauLigneUn.append(createCartLine(item));
