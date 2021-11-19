@@ -7,7 +7,7 @@ function createCartLine (item) {
         <div class="col-3 img-produit-panier"><a href="page-produit.html?ID=${item.productId}"><img src="${item.productImageUrl}" alt="Appareil photo ${item.productName}" /></a></div>
         <div class="col-5 caract-produits">
             <h2><a href="page-produit.html?ID=${item.productId}">${item.productName}</a></h2>
-            <p>${item.productDescription}</p>
+            <p><a href="page-produit.html?ID=${item.productId}">${item.productDescription}</a></p>
             <h3>Type de lentille</h3>
             <p>${item.productLens}</p>
         </div>
