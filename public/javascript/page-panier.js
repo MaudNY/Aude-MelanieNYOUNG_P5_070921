@@ -9,12 +9,23 @@ function createCartLine (item) {
             <h2><a href="page-produit.html?ID=${item.productId}">${item.productName}</a></h2>
             <p><a href="page-produit.html?ID=${item.productId}">${item.productDescription}</a></p>
             <h3>Type de lentille</h3>
-            <p>${item.productLens}</p>
+            <div class="row">
+                <p class="col-6">${item.productLens}</p>
+                <div class="col-6 btn-suppr-article-container"><button class="btn-suppr-article">Supprimer cet article</button></div>
+            </div>
+
         </div>
         <div class="col-2 catégorie-tableau quantité-produits-panier"></div>
         <div class="col-2 catégorie-tableau">${item.productPrice} €</div>
         <div class="ligne-séparation ligne-séparation--page-panier"></div>
     `;
+
+    const $boutonSupprimerArticle = $cartLine.querySelector(".btn-suppr-article");
+    console.log($boutonSupprimerArticle);
+
+    $boutonSupprimerArticle.addEventListener("click", function () {
+        removeItemFromLS();
+    })
 
     return $cartLine;
 }
@@ -31,7 +42,21 @@ function createCartTable () {
     return $tableauLigneUn;
 }
 
-// Gérer le nombre d'articles dans le panier
+// Supprimer la ligne de séparation pour le dernier élément  du tableau
+
+function removeLineOfLastCartLine () {
+    let lastElementOfLS = getDataFromCartOnLS()[getDataFromCartOnLS().length - 1];
+    console.log(lastElementOfLS);
+
+    const ligneSeparation = document.querySelector("ligne-séparation");
+    console.log(ligneSeparation);
+}
+
+// Supprimer un article dans le panier
+
+function removeItemFromLS () {
+    console.log("Coucou");
+}
 
 // Gérer le prix total des articles
 

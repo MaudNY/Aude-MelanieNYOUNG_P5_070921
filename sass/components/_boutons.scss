@@ -12,3 +12,18 @@
         margin: 2em 0;
     }
 }
+
+.btn-suppr-article-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    .btn-suppr-article {
+        border: none;
+        background: none;
+        color: #9DC3E6;
+        :hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+}
