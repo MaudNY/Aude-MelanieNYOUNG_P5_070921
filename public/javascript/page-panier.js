@@ -20,10 +20,11 @@ function createCartLine (item) {
         <div class="ligne-séparation ligne-séparation--page-panier"></div>
     `;
 
-    const $boutonSupprimerArticle = $cartLine.querySelector(".btn-suppr-article");
+    const $boutonSupprimerArticle = $cartLine.querySelector(".btn-suppr-article-container");
 
-    $boutonSupprimerArticle.addEventListener("click", function () {
-        removeItemFromLS();
+    $boutonSupprimerArticle.addEventListener("click", function() {
+        const targetedRemBtn = event.target;
+        removeLsItem(targetedRemBtn);
     })
 
     return $cartLine;
@@ -32,13 +33,13 @@ function createCartLine (item) {
 // Pour chaque élément du tableau "Produit" dans le LS, créer une ligne HTML de panier
 
 function createCartTable () {
-    const $tableauLigneUn = document.querySelector(".tableau-premiere-ligne");
+    const $tableauPremiereLigne = document.querySelector(".tableau-premiere-ligne");
 
     for (let item of getDataFromCartOnLS()) {
-        $tableauLigneUn.append(createCartLine(item));
+        $tableauPremiereLigne.append(createCartLine(item));
     }
 
-    return $tableauLigneUn;
+    return $tableauPremiereLigne;
 }
 
 // Supprimer la ligne de séparation pour le dernier élément  du tableau
@@ -51,13 +52,13 @@ function createCartTable () {
     console.log(ligneSeparation);
 }*/
 
-// Supprimer un article dans le panier
+// Afficher le nombre total d'articles dans le panier
 
-function removeItemFromLS () {
-    console.log("Coucou");
-    const remArticleBtn = document.querySelectorAll(".btn-suppr-article");
-    const remArticleBtnTable = Array.from(remArticleBtn);
-    console.log(remArticleBtnTable);
+function showTotalNumberOfItems () {
+    const $sommeArticles = document.querySelector("#somme-articles");
+    $sommeArticles.innerHTML = getDataFromCartOnLS().length;
+
+    return $sommeArticles;
 }
 
 // Afficher le prix total des articles du panier
@@ -84,19 +85,26 @@ function showTotalAmount () {
     return $sommePanier;
 }
 
-// Afficher le nombre total d'articles dans le panier
-
-function showTotalNumberOfItems () {
-    const $sommeArticles = document.querySelector("#somme-articles");
-    $sommeArticles.innerHTML = getDataFromCartOnLS().length;
-
-    return $sommeArticles;
-}
-
-// EVENT LISTENER - Au chargement de la page --> Afficher les produits du panier
+// EVENT LISTENER - Au chargement de la page --> Afficher les produits du panier, le nombre d'items dans le panier et le montant total du panier
 
 window.addEventListener('load', function () {
     createCartTable();
     showTotalNumberOfItems();
     showTotalAmount();
 })
+
+
+
+
+
+// Supprimer un article DU PANIER
+
+function removeLsItem (targetedRemBtn) {
+    // Répertorier les boutons "Supprimer cet article" dans un tableau
+    const remBtnList = document.querySelectorAll(".btn-suppr-article");
+    const remBtnTable = Array.from(remBtnList);
+
+    // Je sélectionne l'index du bouton sur lequel je clique
+    const index = remBtnTable.indexOf(targetedRemBtn);
+    console.log(index);    
+}
