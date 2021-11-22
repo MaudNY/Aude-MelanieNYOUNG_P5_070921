@@ -24,7 +24,8 @@ function createCartLine (item) {
 
     $boutonSupprimerArticle.addEventListener("click", function() {
         const targetedRemBtn = event.target;
-        removeLsItem(targetedRemBtn);
+        removeCartItem(targetedRemBtn);
+        window.location.reload();
     })
 
     return $cartLine;
@@ -85,6 +86,31 @@ function showTotalAmount () {
     return $sommePanier;
 }
 
+// Supprimer un article DU PANIER
+
+function removeCartItem (targetedRemBtn) {
+    // Répertorier les boutons "Supprimer cet article" dans un tableau
+    const remBtnList = document.querySelectorAll(".btn-suppr-article");
+    const remBtnTable = Array.from(remBtnList);
+
+    // Je sélectionne l'index du bouton sur lequel je clique
+    const index = remBtnTable.indexOf(targetedRemBtn);
+
+    // Pour chaque Btn(index-x) du tableau, je supprime l'objet(index-x) du LS
+    for (let btn of remBtnTable) {
+        removeLsItem(index);
+        break;
+    }
+}
+
+// Supprimer un objet du Local Storage
+
+function removeLsItem (index) {
+    const itemsInLs = getDataFromCartOnLS();
+    itemsInLs.splice(index, 1);
+    localStorage.setItem("product", JSON.stringify(itemsInLs));
+}
+
 // EVENT LISTENER - Au chargement de la page --> Afficher les produits du panier, le nombre d'items dans le panier et le montant total du panier
 
 window.addEventListener('load', function () {
@@ -92,19 +118,3 @@ window.addEventListener('load', function () {
     showTotalNumberOfItems();
     showTotalAmount();
 })
-
-
-
-
-
-// Supprimer un article DU PANIER
-
-function removeLsItem (targetedRemBtn) {
-    // Répertorier les boutons "Supprimer cet article" dans un tableau
-    const remBtnList = document.querySelectorAll(".btn-suppr-article");
-    const remBtnTable = Array.from(remBtnList);
-
-    // Je sélectionne l'index du bouton sur lequel je clique
-    const index = remBtnTable.indexOf(targetedRemBtn);
-    console.log(index);    
-}
