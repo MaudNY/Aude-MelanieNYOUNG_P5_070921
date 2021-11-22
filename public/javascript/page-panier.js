@@ -73,8 +73,8 @@ function showTotalAmount () {
 
     const $sommePanier = document.querySelector("#somme-panier");
 
-    if (localStorage.length == 0) {
-        $sommePanier.innerHTML = 0;
+    if (getDataFromCartOnLS().length == 0) {
+        $sommePanier.innerHTML = `0 €`;
     } else {
         const reducer = (previousValue, currentValue) => previousValue + currentValue;
         const totalAmoutOfCart = totalAmoutTable.reduce(reducer);
