@@ -16,12 +16,11 @@ function createCartLine (item) {
 
         </div>
         <div class="col-2 catégorie-tableau quantité-produits-panier"></div>
-        <div class="col-2 catégorie-tableau">${item.productPrice} €</div>
+        <div class="col-2 catégorie-tableau">${item.productPrice.toFixed(2)} €</div>
         <div class="ligne-séparation ligne-séparation--page-panier"></div>
     `;
 
     const $boutonSupprimerArticle = $cartLine.querySelector(".btn-suppr-article");
-    console.log($boutonSupprimerArticle);
 
     $boutonSupprimerArticle.addEventListener("click", function () {
         removeItemFromLS();
@@ -44,24 +43,60 @@ function createCartTable () {
 
 // Supprimer la ligne de séparation pour le dernier élément  du tableau
 
-function removeLineOfLastCartLine () {
+/*function removeLineOfLastCartLine () {
     let lastElementOfLS = getDataFromCartOnLS()[getDataFromCartOnLS().length - 1];
     console.log(lastElementOfLS);
 
     const ligneSeparation = document.querySelector("ligne-séparation");
     console.log(ligneSeparation);
-}
+}*/
 
 // Supprimer un article dans le panier
 
 function removeItemFromLS () {
     console.log("Coucou");
+    const remArticleBtn = document.querySelectorAll(".btn-suppr-article");
+    const remArticleBtnTable = Array.from(remArticleBtn);
+    console.log(remArticleBtnTable);
 }
 
-// Gérer le prix total des articles
+// Afficher le prix total des articles du panier
+
+function showTotalAmount () {
+    const totalAmoutTable = [];
+
+    for (let element of getDataFromCartOnLS()) {
+        let priceProductsInTheCart = element.productPrice;
+
+        totalAmoutTable.push(priceProductsInTheCart);
+    }
+
+    const $sommePanier = document.querySelector("#somme-panier");
+
+    if (localStorage.length == 0) {
+        $sommePanier.innerHTML = 0;
+    } else {
+        const reducer = (previousValue, currentValue) => previousValue + currentValue;
+        const totalAmoutOfCart = totalAmoutTable.reduce(reducer);
+        $sommePanier.innerHTML = `${totalAmoutOfCart.toFixed(2)} €`;
+    }
+    
+    return $sommePanier;
+}
+
+// Afficher le nombre total d'articles dans le panier
+
+function showTotalNumberOfItems () {
+    const $sommeArticles = document.querySelector("#somme-articles");
+    $sommeArticles.innerHTML = getDataFromCartOnLS().length;
+
+    return $sommeArticles;
+}
 
 // EVENT LISTENER - Au chargement de la page --> Afficher les produits du panier
 
 window.addEventListener('load', function () {
     createCartTable();
+    showTotalNumberOfItems();
+    showTotalAmount();
 })

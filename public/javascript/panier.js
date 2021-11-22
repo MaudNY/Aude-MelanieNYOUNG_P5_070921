@@ -9,7 +9,7 @@ async function getSelectedProduct(selectedLens) {
         productName : product.name,
         productDescription : product.description,
         productLens : selectedLens,
-        productPrice : (product.price/100).toFixed(2),
+        productPrice : (product.price/100),
     };
 
     return selectedProduct;
