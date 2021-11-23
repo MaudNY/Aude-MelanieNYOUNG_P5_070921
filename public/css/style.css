@@ -11210,9 +11210,20 @@ a, ul {
   margin-bottom: 1.55em;
 }
 
-/* Formulaire PAGE PRODUIT - Options lentille */
 label {
   font-weight: bold;
+}
+
+#tableau-coordonnées {
+  margin-top: 1em;
+}
+#tableau-coordonnées .fond-clair {
+  background: #F2F7FC;
+}
+#tableau-coordonnées .fond-clair input {
+  width: 100%;
+  margin: 0.5em 0;
+  padding: 0.5em 0 0.5em 0.5em;
 }
 
 .img-produit {
@@ -11297,18 +11308,6 @@ label {
   align-items: center;
   font-size: 1.25em;
   padding: 0.5em 0.5em;
-}
-
-.tableau-coordonnées {
-  margin-top: 1em;
-}
-.tableau-coordonnées .fond-clair {
-  background: #F2F7FC;
-}
-.tableau-coordonnées .fond-clair input {
-  width: 100%;
-  margin: 0.5em 0;
-  padding: 0.5em 0 0.5em 0.5em;
 }
 
 #tableau-confirmation-commande {

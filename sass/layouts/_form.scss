@@ -1,4 +1,18 @@
-/* Formulaire PAGE PRODUIT - Options lentille */
+// Formulaire PAGE PRODUIT - Options lentille
 label {
     font-weight: bold;
+}
+
+// Formulaire PAGE PANIER - Saisie des coordonnées
+
+#tableau-coordonnées {
+    margin-top: 1em;
+    .fond-clair {
+        background: $fond-clair-2;
+        input {
+            width: 100%;
+            margin: 0.5em 0;
+            padding: 0.5em 0 0.5em 0.5em;
+        }
+    }
 }
