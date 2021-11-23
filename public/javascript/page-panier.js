@@ -31,13 +31,31 @@ function createCartLine (item) {
     return $cartLine;
 }
 
-// Pour chaque élément du tableau "Produit" dans le LS, créer une ligne HTML de panier
+// Créer un texte de remplacement si le panier est vide
+
+function createAltText () {
+    const $altText = document.createElement("div");
+    $altText.className = "row tableau-ligne tableau-ligne--x";
+    $altText.innerHTML = `
+        <div class="col alt-text">Votre panier est encore vide... pour l'instant !</br>
+        Nous vous invitons à parcourir <a href="index.html" class="alt-text-link">notre sélection de produits</a> afin de le remplir.</div>
+    `;
+
+    return $altText;
+}
+
+/* Pour chaque élément du tableau "Produit" dans le LS, créer une ligne HTML de panier 
+    >> si pas de données dans le LS : faire apparaître texte de remplacement */
 
 function createCartTable () {
     const $tableauPremiereLigne = document.querySelector(".tableau-premiere-ligne");
 
-    for (let item of getDataFromCartOnLS()) {
-        $tableauPremiereLigne.append(createCartLine(item));
+    if (getDataFromCartOnLS().length == 0) {
+        $tableauPremiereLigne.append(createAltText());
+    } else {
+        for (let item of getDataFromCartOnLS()) {
+            $tableauPremiereLigne.append(createCartLine(item));
+        }
     }
 
     return $tableauPremiereLigne;
@@ -57,7 +75,12 @@ function createCartTable () {
 
 function showTotalNumberOfItems () {
     const $sommeArticles = document.querySelector("#somme-articles");
-    $sommeArticles.innerHTML = getDataFromCartOnLS().length;
+
+    if (getDataFromCartOnLS() == 0) {
+
+    } else {
+        $sommeArticles.innerHTML = getDataFromCartOnLS().length;
+    }
 
     return $sommeArticles;
 }
@@ -76,7 +99,7 @@ function showTotalAmount () {
     const $sommePanier = document.querySelector("#somme-panier");
 
     if (getDataFromCartOnLS().length == 0) {
-        $sommePanier.innerHTML = `0 €`;
+        
     } else {
         const reducer = (previousValue, currentValue) => previousValue + currentValue;
         const totalAmoutOfCart = totalAmoutTable.reduce(reducer);
@@ -86,7 +109,7 @@ function showTotalAmount () {
     return $sommePanier;
 }
 
-// Supprimer un article DU PANIER
+// Supprimer un article DU PANIER...
 
 function removeCartItem (targetedRemBtn) {
     // Répertorier les boutons "Supprimer cet article" dans un tableau
@@ -103,7 +126,7 @@ function removeCartItem (targetedRemBtn) {
     }
 }
 
-// Supprimer un objet du Local Storage
+// ...et supprimer un objet du Local Storage
 
 function removeLsItem (index) {
     const itemsInLs = getDataFromCartOnLS();

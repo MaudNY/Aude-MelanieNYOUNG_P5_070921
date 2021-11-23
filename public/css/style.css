@@ -11117,9 +11117,9 @@ a, ul {
   border: none;
   background: none;
   color: #9DC3E6;
+  text-decoration: underline;
 }
 .btn-suppr-article-container .btn-suppr-article :hover {
-  text-decoration: underline;
   cursor: pointer;
 }
 
@@ -11250,6 +11250,12 @@ label {
 
 #tableau-panier {
   margin: 10em auto 2em auto;
+  display: flex;
+  justify-content: center;
+}
+#tableau-panier .tableau-premiere-ligne {
+  display: flex;
+  justify-content: center;
 }
 
 .tableau-ligne--1, .tableau-ligne--finale {
@@ -11275,6 +11281,14 @@ label {
   display: flex;
   justify-content: center;
   flex-direction: column;
+}
+.tableau-ligne .alt-text {
+  text-align: center;
+  padding: 6em 0;
+}
+.tableau-ligne .alt-text .alt-text-link {
+  color: #9DC3E6;
+  text-decoration: underline;
 }
 
 .catégorie-tableau {

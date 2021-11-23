@@ -1,5 +1,11 @@
 #tableau-panier {
     margin: 10em auto 2em auto;
+    display: flex;
+    justify-content: center;
+    .tableau-premiere-ligne {
+        display: flex;
+        justify-content: center;
+    }
 }
 
 .tableau-ligne {
@@ -27,6 +33,14 @@
         display: flex;
         justify-content: center;
         flex-direction: column;
+    }
+    .alt-text {
+        text-align: center;
+        padding: 6em 0;
+        .alt-text-link {
+            color: $couleur3;
+            text-decoration: underline;
+        }
     }
 }
 

@@ -20,9 +20,9 @@
     .btn-suppr-article {
         border: none;
         background: none;
-        color: #9DC3E6;
+        color: $couleur3;
+        text-decoration: underline;
         :hover {
-            text-decoration: underline;
             cursor: pointer;
         }
     }
