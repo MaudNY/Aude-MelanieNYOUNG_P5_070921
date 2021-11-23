@@ -71,8 +71,8 @@
                 <form id="tableau-coordonnées" method="post" action="à-définir">
                     <div class="row">
                         <div class="col-6"></div>
-                        <div class="col-3 fond-clair"><input type="text" name="prenom" id="firstName" placeholder="Prénom" required/></div>
-                        <div class="col-3 fond-clair"><input type="text" name="nom" id="lastName" placeholder="Nom" required/></div>
+                        <div class="col-3 fond-clair"><input type="text" name="prenom" id="firstName" minlength="2" placeholder="Prénom" required/></div>
+                        <div class="col-3 fond-clair"><input type="text" name="nom" id="lastName" minlength="2" placeholder="Nom" required/></div>
                     </div>
                     <div class="row">
                         <div class="col-6"></div>
@@ -80,11 +80,11 @@
                     </div>
                     <div class="row">
                         <div class="col-6"></div>
-                        <div class="col-6 fond-clair"><input type="text" name="complement-adresse" id="city" placeholder="Code postal et Ville"/></div>
+                        <div class="col-6 fond-clair"><input type="text" name="ville" id="city" placeholder="Code postal et Ville"/></div>
                     </div>
                     <div class="row">
                         <div class="col-6"></div>
-                        <div class="col-6 fond-clair"><input type="text" name="code-postal" id="email" placeholder="Adresse e-mail (Ex : alexandre.rouvain@gmail.com)" required/></div>
+                        <div class="col-6 fond-clair"><input type="email" name="email" id="email" placeholder="Adresse e-mail (Ex : alexandre.rouvain@gmail.com)" required/></div>
                     </div>
                 </form>
 
@@ -119,6 +119,7 @@
 <script src="javascript/panier.js"></script>
 <script src="javascript/page-panier.js"></script>
 <script src="javascript/fonctions-communes.js"></script>
+<script src="javascript/formulaire-commande.js"></script>
 
 </body>
 
