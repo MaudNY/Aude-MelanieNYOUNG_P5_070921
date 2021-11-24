@@ -22,7 +22,7 @@ function createCartLine (item) {
 
     const $boutonSupprimerArticle = $cartLine.querySelector(".btn-suppr-article-container");
 
-    $boutonSupprimerArticle.addEventListener("click", function() {
+    $boutonSupprimerArticle.addEventListener("click", function(event) {
         const targetedRemBtn = event.target;
         removeCartItem(targetedRemBtn);
         window.location.reload();
@@ -119,11 +119,7 @@ function removeCartItem (targetedRemBtn) {
     // Je sélectionne l'index du bouton sur lequel je clique
     const index = remBtnTable.indexOf(targetedRemBtn);
 
-    // Pour chaque Btn(index-x) du tableau, je supprime l'objet(index-x) du LS
-    for (let btn of remBtnTable) {
-        removeLsItem(index);
-        break;
-    }
+    removeLsItem(index);
 }
 
 // ...et supprimer un objet du Local Storage
