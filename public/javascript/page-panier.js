@@ -49,18 +49,18 @@ function createAltText () {
 
 function cartAndFormAppear() {
     const $cartPrice = document.querySelector(".prix-panier");
-    const $cartLastTableLine = document.querySelector(".tableau-ligne--finale");
+    const $cartNumberOfItems = document.querySelector(".nbre-articles-panier");
+    const $cartTotalAmount = document.querySelector(".prix-total-panier");
+
     const $form = document.querySelector("#saisie-coordonnées");
 
     if (getDataFromCartOnLS().length == 0) {
 
     } else {
         $cartPrice.textContent = "PRIX";
-        $cartLastTableLine.innerHTML = `
-        <div class="col-8"></div>
-        <div class="col-2 catégorie-tableau nbre-articles-panier">Nombre d'articles</div>
-        <div class="col-2 catégorie-tableau prix-total-panier">MONTANT TOTAL</div>
-        `;
+        $cartNumberOfItems.textContent = "Nombre d'articles";
+        $cartTotalAmount.textContent = "MONTANT TOTAL";
+
         $form.innerHTML = `
         <div class="row">
         <div class="col-8"></div>

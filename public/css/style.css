@@ -11133,16 +11133,23 @@ a, ul {
   cursor: pointer;
 }
 
-.swal-button--confirm {
-  background: #9DC3E6;
-}
-
 .card {
   border-radius: 0px 50px;
   overflow: hidden;
 }
 .card .card-img-top {
   border-radius: 0px 50px 0px 0px;
+}
+
+.swal-title {
+  color: black;
+}
+
+.swal-button {
+  font-size: 16px;
+}
+.swal-button--confirm {
+  background: #9DC3E6;
 }
 
 .ligne-séparation {
@@ -11286,6 +11293,9 @@ label {
 .tableau-ligne--1, .tableau-ligne--finale {
   background: #F8F9FA;
   font-weight: bold;
+}
+.tableau-ligne--finale {
+  min-height: 4em;
 }
 .tableau-ligne--x {
   margin: 1em 0 0 0;

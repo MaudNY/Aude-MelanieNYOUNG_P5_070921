@@ -1,0 +1,10 @@
+.swal-title {
+    color: black;
+}
+
+.swal-button {
+    font-size: 16px;
+    &--confirm {
+        background: $couleur3;
+    }
+}
