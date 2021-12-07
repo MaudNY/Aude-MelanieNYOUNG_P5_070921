@@ -52,9 +52,9 @@ function createProductDOM(product) {
 
     $boutonAjoutPanier.addEventListener("click", function() {
         const selectedLens = $select.value;
-        console.log(selectedLens);
         sendToLocalStorage(selectedLens);
         incrementCartVignette();
+        alertItemInCart();
     })
 
     return $productInfo;
@@ -92,6 +92,17 @@ function incrementCartVignette() {
     $cartVignette.textContent = currentValue;
 
     return $cartVignette;
+}
+
+// ALERTE - Ajout au panier = OK
+
+function alertItemInCart() {
+    swal({
+        title: "Votre article a été ajouté au panier !",
+        text: "",
+        icon: "success",
+        button: "Continuer mes achats",
+      });
 }
 
 // EVENT LISTENER - Au chargement de la page...

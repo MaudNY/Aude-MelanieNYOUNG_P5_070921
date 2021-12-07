@@ -1,4 +1,4 @@
-/* Bouton AJOUTER AU PANIER + COMMANDER */
+// Bouton AJOUTER AU PANIER + COMMANDER
 .bouton-type {
     text-align: center;
     padding: 0.5em 0;
@@ -26,4 +26,10 @@
             cursor: pointer;
         }
     }
+}
+
+// Bouton "Continuer mes achats" (dans Alerte item dans panier = OK)
+
+.swal-button--confirm {
+    background: $couleur3;
 }

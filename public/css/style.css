@@ -11093,7 +11093,6 @@ a, ul {
   text-decoration-line: none;
 }
 
-/* Bouton AJOUTER AU PANIER + COMMANDER */
 .bouton-type {
   text-align: center;
   padding: 0.5em 0;
@@ -11121,6 +11120,10 @@ a, ul {
 }
 .btn-suppr-article-container .btn-suppr-article :hover {
   cursor: pointer;
+}
+
+.swal-button--confirm {
+  background: #9DC3E6;
 }
 
 .card {
