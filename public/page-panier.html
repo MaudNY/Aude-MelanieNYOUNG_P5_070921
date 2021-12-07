@@ -46,14 +46,10 @@
                     <div class="row tableau-ligne tableau-ligne--1">
                         <div class="col-8 mon-panier">MON PANIER</div>
                         <div class="col-2 catégorie-tableau"></div>
-                        <div class="col-2 catégorie-tableau">PRIX</div>
+                        <div class="col-2 catégorie-tableau prix-panier"></div>
                     </div>
                 </div>
-                <div class="row tableau-ligne tableau-ligne--finale">
-                    <div class="col-8"></div>
-                    <div class="col-2 catégorie-tableau">Nombre d'articles</div>
-                    <div class="col-2 catégorie-tableau">PRIX TOTAL</div>
-                </div>
+                <div class="row tableau-ligne tableau-ligne--finale"></div>
                 <div class="row">
                     <div class="col-8"></div>
                     <div id="somme-articles" class="col-2 catégorie-tableau"></div>
@@ -62,40 +58,7 @@
             </div>
 
             <!-- Tableau Coordonnées -->
-            <div id="saisie-coordonnées">
-                <div class="row">
-                    <div class="col-8"></div>
-                    <div class="col-4 tableau-ligne tableau-ligne--1 tableau-ligne--coordonnées">MES COORDONNÉES</div>
-                </div>
-
-                <form id="tableau-coordonnées" method="post" action="à-définir">
-                    <div class="row">
-                        <div class="col-6"></div>
-                        <div class="col-3 fond-clair"><input type="text" name="prenom" id="firstName" minlength="2" placeholder="Prénom" required/></div>
-                        <div class="col-3 fond-clair"><input type="text" name="nom" id="lastName" minlength="2" placeholder="Nom" required/></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-6"></div>
-                        <div class="col-6 fond-clair"><input type="text" name="adresse" id="adress" placeholder="Numéro, nom de rue (Ex : 8, avenue Charles Fitte)" required/></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-6"></div>
-                        <div class="col-6 fond-clair"><input type="text" name="ville" id="city" placeholder="Code postal et Ville" required/></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-6"></div>
-                        <div class="col-6 fond-clair"><input type="email" name="email" id="email" placeholder="Adresse e-mail (Ex : alexandre.rouvain@gmail.com)" required/></div>
-                    </div>
-                </form>
-
-            </div>
-
-            <!-- Bouton "Commander" -->
-            <div class="row">
-                <div class="col-9"></div>
-                <button type="submit" class="col-2 bouton-type bouton-type--commander">COMMANDER</button>
-                <div class="col-1"></div>
-            </div>
+            <div id="saisie-coordonnées"></div>
 
         <!-- Fin du conteneur Page Panier -->
         </div>

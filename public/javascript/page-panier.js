@@ -44,6 +44,58 @@ function createAltText () {
     return $altText;
 }
 
+/* Faire apparaître le prix, prix total, nombre d'articles du panier et le formulaire
+== UNIQUEMENT s'il y a quelque chose dans le LS*/
+
+function cartAndFormAppear() {
+    const $cartPrice = document.querySelector(".prix-panier");
+    const $cartLastTableLine = document.querySelector(".tableau-ligne--finale");
+    const $form = document.querySelector("#saisie-coordonnées");
+
+    if (getDataFromCartOnLS().length == 0) {
+
+    } else {
+        $cartPrice.textContent = "PRIX";
+        $cartLastTableLine.innerHTML = `
+        <div class="col-8"></div>
+        <div class="col-2 catégorie-tableau nbre-articles-panier">Nombre d'articles</div>
+        <div class="col-2 catégorie-tableau prix-total-panier">MONTANT TOTAL</div>
+        `;
+        $form.innerHTML = `
+        <div class="row">
+        <div class="col-8"></div>
+        <div class="col-4 tableau-ligne tableau-ligne--1 tableau-ligne--coordonnées">MES COORDONNÉES</div>
+    </div>
+
+    <form id="tableau-coordonnées" method="post" action="à-définir">
+        <div class="row">
+            <div class="col-6"></div>
+            <div class="col-3 fond-clair"><input type="text" name="prenom" id="firstName" minlength="2" placeholder="Prénom" required/></div>
+            <div class="col-3 fond-clair"><input type="text" name="nom" id="lastName" minlength="2" placeholder="Nom" required/></div>
+        </div>
+        <div class="row">
+            <div class="col-6"></div>
+            <div class="col-6 fond-clair"><input type="text" name="adresse" id="adress" placeholder="Numéro, nom de rue (Ex : 8, avenue Charles Fitte)" required/></div>
+        </div>
+        <div class="row">
+            <div class="col-6"></div>
+            <div class="col-6 fond-clair"><input type="text" name="ville" id="city" placeholder="Code postal et Ville" required/></div>
+        </div>
+        <div class="row">
+            <div class="col-6"></div>
+            <div class="col-6 fond-clair"><input type="email" name="email" id="email" placeholder="Adresse e-mail (Ex : alexandre.rouvain@gmail.com)" required/></div>
+        </div>
+    </form>
+
+    <div class="row">
+                <div class="col-9"></div>
+                <button type="submit" class="col-2 bouton-type bouton-type--commander">COMMANDER</button>
+                <div class="col-1"></div>
+            </div>
+        `;
+    }
+}
+
 /* Pour chaque élément du tableau "Produit" dans le LS, créer une ligne HTML de panier 
     >> si pas de données dans le LS : faire apparaître texte de remplacement */
 
@@ -60,16 +112,6 @@ function createCartTable () {
 
     return $tableauPremiereLigne;
 }
-
-// Supprimer la ligne de séparation pour le dernier élément  du tableau
-
-/*function removeLineOfLastCartLine () {
-    let lastElementOfLS = getDataFromCartOnLS()[getDataFromCartOnLS().length - 1];
-    console.log(lastElementOfLS);
-
-    const ligneSeparation = document.querySelector("ligne-séparation");
-    console.log(ligneSeparation);
-}*/
 
 // Afficher le nombre total d'articles dans le panier
 
@@ -134,6 +176,7 @@ function removeLsItem (index) {
 
 window.addEventListener('load', function () {
     createCartTable();
+    cartAndFormAppear();
     showTotalNumberOfItems();
     showTotalAmount();
 })
