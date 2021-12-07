@@ -11089,6 +11089,17 @@ textarea.form-control-lg {
 /* Couleurs*/
 /* Mixins génériques */
 /* Mixins FICHE PRODUIT */
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  padding: 0 0 5em 0;
+  position: relative;
+}
+
 a, ul {
   text-decoration-line: none;
 }
@@ -11328,12 +11339,18 @@ label {
   padding: 3em 0;
 }
 
-.ligne-pied-de-page {
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+footer .ligne-pied-de-page {
   display: flex;
   padding: 1em 0em;
   font-size: 1.15em;
 }
-.ligne-pied-de-page .col-4 {
+footer .ligne-pied-de-page .col-4 {
   text-align: center;
 }
 
