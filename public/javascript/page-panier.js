@@ -75,7 +75,7 @@ function cartAndFormAppear() {
         </div>
         <div class="row">
             <div class="col-6"></div>
-            <div class="col-6 fond-clair"><input type="text" name="adresse" id="adress" placeholder="Numéro, nom de rue (Ex : 8, avenue Charles Fitte)" required/></div>
+            <div class="col-6 fond-clair"><input type="text" name="adresse" id="address" placeholder="Numéro, nom de rue (Ex : 8, avenue Charles Fitte)" required/></div>
         </div>
         <div class="row">
             <div class="col-6"></div>
