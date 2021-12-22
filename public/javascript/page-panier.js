@@ -88,11 +88,17 @@ function cartAndFormAppear() {
     </form>
 
     <div class="row">
-                <div class="col-9"></div>
-                <button type="submit" class="col-2 bouton-type bouton-type--commander">COMMANDER</button>
-                <div class="col-1"></div>
-            </div>
+        <div class="col-9"></div>
+        <button type="submit" class="col-2 bouton-type bouton-type--commander">COMMANDER</button>
+        <div class="col-1"></div>
+    </div>
         `;
+
+        const $orderButton = document.querySelector(".bouton-type--commander");
+
+        $orderButton.addEventListener("click", () => {
+            sendOrder();
+        })
     }
 }
 
