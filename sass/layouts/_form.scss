@@ -24,14 +24,14 @@ label {
 .form-block {
     position: relative;
     &--small {
-        min-width: 300px;
+        width: 300px;
     }
     &--long {
         width: 100%;
     }
     i {
         position: absolute;
-        top: 15px;
+        top: 38px;
         right: 15px;
     }
 }

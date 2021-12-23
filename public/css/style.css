@@ -11255,14 +11255,14 @@ label {
   position: relative;
 }
 .form-block--small {
-  min-width: 300px;
+  width: 300px;
 }
 .form-block--long {
   width: 100%;
 }
 .form-block i {
   position: absolute;
-  top: 15px;
+  top: 38px;
   right: 15px;
 }
 

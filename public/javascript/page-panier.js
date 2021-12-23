@@ -70,12 +70,14 @@ function cartAndFormAppear() {
             <div class="form-container">
                 <div class="prenom-nom">
                     <div class="form-block form-block--small">
+                        <label for="firstName">Prénom</label>
                         <input type="text" name="prenom" id="firstName" minlength="2" placeholder="Prénom" class="success" required/>
                         <i class="fas fa-check-circle"></i>
                         <i class="fas fa-exclamation-circle"></i>
                         <p class="error-message">Error message</p>
                     </div>
                     <div class="form-block form-block--small">
+                        <label for="lastName">Nom de famille</label>
                         <input type="text" name="nom" id="lastName" minlength="2" placeholder="Nom" class="error" required/>
                         <i class="fas fa-check-circle"></i>
                         <i class="fas fa-exclamation-circle"></i>
@@ -83,19 +85,22 @@ function cartAndFormAppear() {
                     </div>
                 </div>
                 <div class="address form-block form-block--long">
+                    <label for="address">Adresse postale</label>
                     <input type="text" name="adresse" id="address" placeholder="Numéro, nom de rue (Ex : 8, avenue Charles Fitte)" required/>
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
                     <p class="error-message">Error message</p>
                 </div>
                 <div class="city form-block form-block--long">
-                    <input type="text" name="ville" id="city" placeholder="Code postal et Ville" required/>
+                    <label for="city">Code postal et Ville</label>
+                    <input type="text" name="ville" id="city" placeholder="Ex : 78000 Versailles" required/>
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
                     <p class="error-message">Error message</p>
                 </div>
                 <div class="email form-block form-block--long">
-                    <input type="email" name="email" id="email" placeholder="Adresse e-mail (Ex : alexandre.rouvain@gmail.com)" required/>
+                    <label for="email">E-mail</label>
+                    <input type="email" name="email" id="email" placeholder="Email (Ex : alexandre.rouvain@gmail.com)" required/>
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
                     <p class="error-message">Error message</p>
