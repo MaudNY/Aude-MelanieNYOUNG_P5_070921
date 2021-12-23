@@ -5,14 +5,63 @@ label {
 
 // Formulaire PAGE PANIER - Saisie des coordonnées
 
-#tableau-coordonnées {
-    margin-top: 1em;
-    .fond-clair {
-        background: $fond-clair-2;
-        input {
-            width: 100%;
-            margin: 0.5em 0;
-            padding: 0.5em 0 0.5em 0.5em;
+#form-commande {
+    display: flex;
+    width: 50%;
+    margin: 1em 0 0 auto;
+    background: $fond-clair-2;
+    .form-container {
+        width: 100%;
+        margin: 1.5em 1em 0.5em 1em;
+        .prenom-nom {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
         }
+    }
+}
+
+.form-block {
+    position: relative;
+    &--small {
+        min-width: 300px;
+    }
+    &--long {
+        width: 100%;
+    }
+    i {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+    }
+}
+
+.error-message {
+    margin : 0.1em 0 0.25em 0;
+    font-size: 14px;
+    font-style: italic;
+    color: $couleur-error;
+}
+
+input {
+    width: 100%;
+    height: 32px;
+    padding: 1.25em 0.5em 1.25em 0.5em;
+}
+
+.fa-check-circle {
+    color: $couleur-sucess;
+}
+
+.fa-exclamation-circle {
+    color: $couleur-error;
+}
+
+@keyframes wrong-input {
+    25% {
+        transform: translateX(1%);
+    }
+    75% {
+        transform: translateX(1% * -1);
     }
 }

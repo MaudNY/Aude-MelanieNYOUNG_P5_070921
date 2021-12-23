@@ -31,12 +31,22 @@ function getIdsFromCartProducts () {
     return idList;
 }
 
+// Montrer les valeurs du formulaire
+
+function showFormValues() {
+    const formValues = getFormValues();
+
+    return console.log(formValues);
+}
+
 // Envoyer l'objet JSON de données de contact et le tableau d'IDs de produits
 
 function sendOrder() {
 
     const formValues = getFormValues();
     const idsFromCartProducts = getIdsFromCartProducts();
+
+    console.log(formValues);
 
     fetch ("http://localhost:3000/api/cameras/order", {
         method: "POST",

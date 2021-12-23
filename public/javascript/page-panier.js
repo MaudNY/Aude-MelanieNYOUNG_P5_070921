@@ -62,37 +62,53 @@ function cartAndFormAppear() {
         $cartTotalAmount.textContent = "MONTANT TOTAL";
 
         $form.innerHTML = `
-        <div class="row">
-        <div class="col-8"></div>
-        <div class="col-4 tableau-ligne tableau-ligne--1 tableau-ligne--coordonnées">MES COORDONNÉES</div>
-    </div>
+        <div class="contact-details-block">
+            <div class="tableau-ligne tableau-ligne--1 tableau-ligne--coordonnées">MES COORDONNÉES</div>
+        </div>
 
-    <form id="tableau-coordonnées" method="post" action="à-définir">
-        <div class="row">
-            <div class="col-6"></div>
-            <div class="col-3 fond-clair"><input type="text" name="prenom" id="firstName" minlength="2" placeholder="Prénom" required/></div>
-            <div class="col-3 fond-clair"><input type="text" name="nom" id="lastName" minlength="2" placeholder="Nom" required/></div>
-        </div>
-        <div class="row">
-            <div class="col-6"></div>
-            <div class="col-6 fond-clair"><input type="text" name="adresse" id="address" placeholder="Numéro, nom de rue (Ex : 8, avenue Charles Fitte)" required/></div>
-        </div>
-        <div class="row">
-            <div class="col-6"></div>
-            <div class="col-6 fond-clair"><input type="text" name="ville" id="city" placeholder="Code postal et Ville" required/></div>
-        </div>
-        <div class="row">
-            <div class="col-6"></div>
-            <div class="col-6 fond-clair"><input type="email" name="email" id="email" placeholder="Adresse e-mail (Ex : alexandre.rouvain@gmail.com)" required/></div>
-        </div>
-    </form>
+        <form id="form-commande" method="post" action="à-définir">
+            <div class="form-container">
+                <div class="prenom-nom">
+                    <div class="form-block form-block--small">
+                        <input type="text" name="prenom" id="firstName" minlength="2" placeholder="Prénom" class="success" required/>
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <p class="error-message">Error message</p>
+                    </div>
+                    <div class="form-block form-block--small">
+                        <input type="text" name="nom" id="lastName" minlength="2" placeholder="Nom" class="error" required/>
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <p class="error-message">Error message</p>
+                    </div>
+                </div>
+                <div class="address form-block form-block--long">
+                    <input type="text" name="adresse" id="address" placeholder="Numéro, nom de rue (Ex : 8, avenue Charles Fitte)" required/>
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <p class="error-message">Error message</p>
+                </div>
+                <div class="city form-block form-block--long">
+                    <input type="text" name="ville" id="city" placeholder="Code postal et Ville" required/>
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <p class="error-message">Error message</p>
+                </div>
+                <div class="email form-block form-block--long">
+                    <input type="email" name="email" id="email" placeholder="Adresse e-mail (Ex : alexandre.rouvain@gmail.com)" required/>
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <p class="error-message">Error message</p>
+                </div>
+            </div>
+        </form>
 
-    <div class="row">
-        <div class="col-9"></div>
-        <button type="submit" class="col-2 bouton-type bouton-type--commander">COMMANDER</button>
-        <div class="col-1"></div>
-    </div>
-        `;
+        <div class="row">
+            <div class="col-9"></div>
+            <button type="submit" class="col-2 bouton-type bouton-type--commander">COMMANDER</button>
+            <div class="col-1"></div>
+        </div>
+            `;
 
         const $orderButton = document.querySelector(".bouton-type--commander");
 
