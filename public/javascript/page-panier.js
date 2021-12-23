@@ -69,16 +69,16 @@ function cartAndFormAppear() {
         <form id="form-commande" method="post" action="à-définir">
             <div class="form-container">
                 <div class="prenom-nom">
-                    <div class="form-block form-block--small">
+                    <div class="form-block form-block--small success">
                         <label for="firstName">Prénom</label>
-                        <input type="text" name="prenom" id="firstName" minlength="2" placeholder="Prénom" class="success" required/>
+                        <input type="text" name="prenom" id="firstName" minlength="2" placeholder="Prénom" required/>
                         <i class="fas fa-check-circle"></i>
                         <i class="fas fa-exclamation-circle"></i>
                         <p class="error-message">Error message</p>
                     </div>
-                    <div class="form-block form-block--small">
+                    <div class="form-block form-block--small error">
                         <label for="lastName">Nom de famille</label>
-                        <input type="text" name="nom" id="lastName" minlength="2" placeholder="Nom" class="error" required/>
+                        <input type="text" name="nom" id="lastName" minlength="2" placeholder="Nom" required/>
                         <i class="fas fa-check-circle"></i>
                         <i class="fas fa-exclamation-circle"></i>
                         <p class="error-message">Error message</p>
@@ -100,7 +100,7 @@ function cartAndFormAppear() {
                 </div>
                 <div class="email form-block form-block--long">
                     <label for="email">E-mail</label>
-                    <input type="email" name="email" id="email" placeholder="Email (Ex : alexandre.rouvain@gmail.com)" required/>
+                    <input type="email" name="email" id="email" placeholder="E-mail (Ex : alexandre.rouvain@gmail.com)" required/>
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
                     <p class="error-message">Error message</p>

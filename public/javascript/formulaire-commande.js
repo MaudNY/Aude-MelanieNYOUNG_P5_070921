@@ -1,7 +1,7 @@
 // Créer objet JSON (paire clé-valeur) contenant les données de contact du formulaire
 
 function getFormValues() {
-    const $orderForm = document.querySelector("#tableau-coordonnées");
+    const $orderForm = document.querySelector("#form-commande");
 
     let formData = {
         firstName : $orderForm.querySelector("#firstName"),

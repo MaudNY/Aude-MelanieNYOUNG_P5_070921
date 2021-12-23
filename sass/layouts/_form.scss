@@ -23,24 +23,19 @@ label {
 
 .form-block {
     position: relative;
+    height: 90px;
     &--small {
         width: 300px;
     }
     &--long {
         width: 100%;
     }
-    i {
+    .fas {
         position: absolute;
         top: 38px;
         right: 15px;
+        visibility: hidden;
     }
-}
-
-.error-message {
-    margin : 0.1em 0 0.25em 0;
-    font-size: 14px;
-    font-style: italic;
-    color: $couleur-error;
 }
 
 input {
@@ -49,12 +44,38 @@ input {
     padding: 1.25em 0.5em 1.25em 0.5em;
 }
 
-.fa-check-circle {
-    color: $couleur-sucess;
+.success {
+    input {
+        border-color: $couleur-sucess;
+    }
+    .fa-check-circle {
+        color: $couleur-sucess;
+        visibility: visible;
+    }
+    .error-message {
+        visibility: hidden;
+    }
+}
+    
+.error {
+    input {
+        border-color: $couleur-error;
+    }
+    .fa-exclamation-circle {
+        color: $couleur-error;
+        visibility: visible;
+    }
+    .error-message {
+        margin : 0.1em 0 0.25em 0;
+        font-size: 14px;
+        font-style: italic;
+        color: $couleur-error;
+        visibility: visible;
+    }
 }
 
-.fa-exclamation-circle {
-    color: $couleur-error;
+.error-message {
+    visibility: hidden;
 }
 
 @keyframes wrong-input {
