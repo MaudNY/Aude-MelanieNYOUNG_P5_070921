@@ -31,13 +31,14 @@ function getIdsFromCartProducts () {
     return idList;
 }
 
-// Envoyer l'objet JSON de données de contact et le tableau d'IDs de produits
+/* Envoyer l'objet JSON de données de contact et le tableau d'IDs de produits au serveur
++ renvoyer un NUMERO DE COMMANDE
++ ouvrir la page de confirmation de commande */
 
 function sendOrder() {
 
     const contact = getFormValues();
     const products = getIdsFromCartProducts();
-    console.log(contact, products);
 
     fetch ("http://localhost:3000/api/cameras/order", {
         method: "POST",
@@ -46,5 +47,15 @@ function sendOrder() {
     'Content-type': 'application/json'
         },
         body: JSON.stringify({contact, products})
-    });
+    })
+    .then(function(res) {
+        if (res.ok) {
+            return res.json();
+        }
+    })
+    .then(function(value) {
+        const orderId = value.orderId;
+        
+        return console.log(orderId);
+    })
 }
