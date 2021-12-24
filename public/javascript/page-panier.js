@@ -117,7 +117,7 @@ function cartAndFormAppear() {
 
         const $orderButton = document.querySelector(".bouton-type--commander");
 
-        $orderButton.addEventListener("click", (e) => {
+        $orderButton.addEventListener("click", function(e) {
             e.preventDefault();
             sendOrder();
         })

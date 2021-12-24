@@ -32,7 +32,7 @@ function getIdsFromCartProducts () {
 }
 
 /* Envoyer l'objet JSON de données de contact et le tableau d'IDs de produits au serveur
-+ renvoyer un NUMERO DE COMMANDE
++ réceptionner le numéro de commande
 + ouvrir la page de confirmation de commande */
 
 function sendOrder() {
@@ -55,7 +55,8 @@ function sendOrder() {
     })
     .then(function(value) {
         const orderId = value.orderId;
-        
-        return console.log(orderId);
+        const newUrl = location.assign(`page-confirmation-commande.html?order=${orderId}`);
+
+        return newUrl;
     })
 }
