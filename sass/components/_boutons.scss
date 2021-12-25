@@ -13,6 +13,12 @@
     }
 }
 
+.disabled {
+    color: grey;
+    border: 0.25px solid rgb(167, 166, 166);
+    background: $fond-clair;
+}
+
 // Bouton "Supprimer cet article" (Panier)
 
 .btn-suppr-article-container {

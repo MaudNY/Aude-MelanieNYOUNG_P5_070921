@@ -11118,6 +11118,12 @@ a, ul {
   margin: 2em 0;
 }
 
+.disabled {
+  color: grey;
+  border: 0.25px solid #a7a6a6;
+  background: #F8F9FA;
+}
+
 .btn-suppr-article-container {
   display: flex;
   justify-content: flex-end;

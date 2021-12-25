@@ -69,14 +69,14 @@ function cartAndFormAppear() {
         <form id="form-commande" method="post" action="à-définir">
             <div class="form-container">
                 <div class="prenom-nom">
-                    <div class="form-block form-block--small success">
+                    <div class="form-block form-block--small">
                         <label for="firstName">Prénom</label>
                         <input type="text" name="prenom" id="firstName" minlength="2" placeholder="Prénom" required/>
                         <i class="fas fa-check-circle"></i>
                         <i class="fas fa-exclamation-circle"></i>
                         <p class="error-message">Error message</p>
                     </div>
-                    <div class="form-block form-block--small error">
+                    <div class="form-block form-block--small">
                         <label for="lastName">Nom de famille</label>
                         <input type="text" name="nom" id="lastName" minlength="2" placeholder="Nom" required/>
                         <i class="fas fa-check-circle"></i>
@@ -110,7 +110,7 @@ function cartAndFormAppear() {
 
         <div class="row">
             <div class="col-9"></div>
-            <button type="submit" class="col-2 bouton-type bouton-type--commander">COMMANDER</button>
+            <button type="submit" class="col-2 bouton-type bouton-type--commander disabled" disabled>COMMANDER</button>
             <div class="col-1"></div>
         </div>
             `;
