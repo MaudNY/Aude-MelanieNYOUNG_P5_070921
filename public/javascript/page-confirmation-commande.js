@@ -21,6 +21,7 @@ async function orderConfirmationAppears() {
     
     const orderID = await urlOrderID();
     const orderAmount = JSON.parse(localStorage.getItem("order final amount"));
+    const contactDetails = JSON.parse(localStorage.getItem("order contact details"));
       
     const $orderConfirmationTable = document.querySelector("#tableau-confirmation-commande");
 
@@ -29,13 +30,13 @@ async function orderConfirmationAppears() {
             <div class="col commande-confirmée">VOTRE COMMANDE EST CONFIRMÉE.</div>
         </div>
         <div class="row message-commande-confirmée">
-            <span>Alexandre,</span><br />
-            <span>Nous vous remercions pour votre commande n° <strong>${orderID}</strong> d'un montal total de <strong>${orderAmount}</strong> qui vous parviendra très prochainement à l'adresse ci-dessous :</span><br /><br />
+            <span>${contactDetails.firstName},</span><br /><br />
 
-            <strong>Prénom Nom</strong>
-            <strong>Adresse ligne 1</strong>
-            <strong>Complément d'adresse</strong>
-            <strong>Code Postal</strong> <strong>Ville</strong><br /><br />
+            <span>Nous vous remercions pour votre commande n° <strong>${orderID}</strong> d'un montal total de <strong>${orderAmount}</strong> qui vous parviendra très prochainement à l'adresse ci-dessous :</span><br /><br /><br />
+
+            <strong>${contactDetails.firstName} ${contactDetails.lastName}</strong>
+            <strong>${contactDetails.address}</strong>
+            <strong>${contactDetails.city}</strong><br /><br />
 
 
             <span>Nous espérons vous retrouver bientôt sur notre site,</span><br />

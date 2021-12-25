@@ -120,6 +120,7 @@ function cartAndFormAppear() {
         $orderButton.addEventListener("click", function(e) {
             e.preventDefault();
             sendOrder();
+            getContactDetails();
         })
     }
 }

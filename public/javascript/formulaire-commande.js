@@ -42,6 +42,15 @@ function getFinalAmoutOfTheOrder() {
     return finalCartAmount;
 }
 
+// Récupérer et conserver les données du formulaire de commande
+
+function getContactDetails() {
+    const formValues = getFormValues();
+    
+    localStorage.setItem("order contact details", JSON.stringify(formValues));
+
+    return formValues;
+}
 
 /* Envoyer l'objet JSON de données de contact et le tableau d'IDs de produits au serveur
 + réceptionner le numéro de commande
