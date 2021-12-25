@@ -173,7 +173,7 @@ function showTotalAmount () {
     } else {
         const reducer = (previousValue, currentValue) => previousValue + currentValue;
         const totalAmoutOfCart = totalAmoutTable.reduce(reducer);
-        $sommePanier.innerHTML = `${totalAmoutOfCart.toFixed(2)} €`;
+        $sommePanier.innerHTML = `${totalAmoutOfCart.toFixed(2)}€`;
     }
     
     return $sommePanier;

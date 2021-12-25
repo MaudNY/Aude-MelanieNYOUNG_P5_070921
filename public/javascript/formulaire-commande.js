@@ -31,6 +31,18 @@ function getIdsFromCartProducts () {
     return idList;
 }
 
+// Récupérer et conserver le prix total de la commande dans le Local Storage
+
+function getFinalAmoutOfTheOrder() {
+    const $cartAmout = document.querySelector("#somme-panier");
+    const finalCartAmount = $cartAmout.innerHTML;
+
+    localStorage.setItem("order final amount", JSON.stringify(finalCartAmount));
+
+    return finalCartAmount;
+}
+
+
 /* Envoyer l'objet JSON de données de contact et le tableau d'IDs de produits au serveur
 + réceptionner le numéro de commande
 + ouvrir la page de confirmation de commande */
@@ -60,3 +72,7 @@ function sendOrder() {
         return newUrl;
     })
 }
+
+window.addEventListener('load', function() {
+    getFinalAmoutOfTheOrder();
+})

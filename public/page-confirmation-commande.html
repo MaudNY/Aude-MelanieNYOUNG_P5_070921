@@ -28,6 +28,7 @@
                     <a href="page-panier.html" id="panier">
                         <span id="libellé-panier">Mon panier</span>
                         <i class="fas fa-shopping-cart"></i>
+                        <span class="nombre-items-panier" id="vignette-panier">0</span>
                     </a>
                 </nav>
             </div>
@@ -40,25 +41,7 @@
         <!-- Début du conteneur Page Confirmation Commande -->
         <div class="container">
 
-            <div id="tableau-confirmation-commande">
-                <div class="row tableau-ligne tableau-ligne--1">
-                    <div class="col commande-confirmée">VOTRE COMMANDE EST CONFIRMÉE.</div>
-                </div>
-                <div class="row message-commande-confirmée">
-                    <span>Alexandre,</span><br />
-                    <span>Nous vous remercions pour votre commande n° <strong>930337164</strong> de <strong>999,99€</strong> qui vous parviendra très prochainement à l'adresse ci-dessous :</span><br /><br />
-
-                    <strong>Prénom Nom</strong>
-                    <strong>Adresse ligne 1</strong>
-                    <strong>Complément d'adresse</strong>
-                    <strong>Code Postal</strong> <strong>Ville</strong><br /><br />
-
-
-                    <span>Nous espérons vous retrouver bientôt sur notre site,</span><br />
-                    <span>L'équipe Orinoco.</span>
-                </div>
-                <div class="ligne-séparation"></div>
-            </div>
+            <div id="tableau-confirmation-commande"></div>
 
         <!-- Fin du conteneur Page Confirmation Commande -->
         </div>
@@ -80,7 +63,7 @@
     </footer>
 
 <script src="javascript/panier.js"></script>
-<script src="javascript/fonctions-communes.js"></script>
+<script src="javascript/page-confirmation-commande.js"></script>
 
 </body>
 
