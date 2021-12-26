@@ -1,12 +1,43 @@
-// CONSTANTES propres à la validation du formulaire
+// Identifier les inputs vides
 
-const firstName = document.querySelector("#firstName");
-const lastName = document.querySelector("#lastName");
-const address = document.querySelector("#address");
-const city = document.querySelector("#city");
-const email = document.querySelector("#email");
+function tagEmptyInput(input, inputValue) {
+    
+    if (inputValue === '') {
+        setErrorFor(input, "Ce champ ne peut être vide");
+    }
+
+    return input;
+}
+
+// Renvoyer une ERROR pour X CAS
+
+function setErrorFor(input, message) {
+    const formBlock = input.parentElement;
+    formBlock.classList.add("error");
+
+    const errorMessage = formBlock.querySelector(".error-message");
+    errorMessage.innerText = message;
+
+    return formBlock;
+}
+
+// Renvoyer un SUCCESS pour X CAS
+
+function setSuccessFor(input, message) {
+    const formBlock = input.parentElement;
+    formBlock.classList.add("success");
+
+    return formBlock;
+}
+
+// Renvoyer une erreur >>> si TAILLE MINIMALE dans Prénom-Nom est strictement inférieure à 2
+
+// Renvoyer une erreur >>> si FORMAT du champ "City" est différent de 01234-xxxx
+
+// Renvoyer une erreur >>> si LE CHAMP "Email" ne contient pas une adresse email
 
 // Obtenir l'ID de l'input sur lequel on clique
+
 function getInputID(targetedInput) {
     // Répertorier tous les inputs du formulaire dans un tableau
     const inputNodeList = document.querySelectorAll("input");
@@ -15,46 +46,10 @@ function getInputID(targetedInput) {
     // Récupérer l'ID de l'input sur lequel je clique
     for (let input of inputTableList) {
         const inputID = targetedInput.id;
-        console.log(inputID);
 
-        return inputID;
+        return `#${inputID}`;
     }
 }
-
-// Vérifier chaque champ du formulaire avant envoi
-
-function checkFormInputs(inputValue) {
-
-    if (inputValue === '') {
-        console.log("ERREUR");
-    }
-}
-
-// Renvoyer une erreur >>> si INPUT DU FORMULAIRE EST VIDE
-
-/*function setErrorFor(inputID, message) {
-    const formBlock = inputID.parentElement;
-
-    return formBlock;    
-}
-
-function errorIfEmptyInput2(input) {
-
-    if (input == '') {
-        console.log("ERREUR");
-    }
-
-    console.log(input);
-
-    return input;
-    
-}*/
-
-// Renvoyer une erreur >>> si TAILLE MINIMALE dans Prénom-Nom est strictement inférieure à 2
-
-// Renvoyer une erreur >>> si FORMAT du champ "City" est différent de 01234-xxxx
-
-// Renvoyer une erreur >>> si LE CHAMP "Email" ne contient pas une adresse email
 
 // Faire apparaître le bouton "COMMANDER" quand tous les "form-block" contiennent la classe "success"
 
