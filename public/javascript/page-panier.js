@@ -69,16 +69,16 @@ function cartAndFormAppear() {
         <form id="form-commande" method="post" action="à-définir">
             <div class="form-container">
                 <div class="prenom-nom">
-                    <div class="form-block form-block--small">
+                    <div class="form-block form-block--small error">
                         <label for="firstName">Prénom</label>
-                        <input type="text" name="prenom" id="firstName" minlength="2" placeholder="Prénom" required/>
+                        <input type="text" name="prenom" id="firstName" onclick="getInputID(this)" onchange="checkFormInputs(this.value)" minlength="2" placeholder="Prénom" required/>
                         <i class="fas fa-check-circle"></i>
                         <i class="fas fa-exclamation-circle"></i>
                         <p class="error-message">Error message</p>
                     </div>
                     <div class="form-block form-block--small">
                         <label for="lastName">Nom de famille</label>
-                        <input type="text" name="nom" id="lastName" minlength="2" placeholder="Nom" required/>
+                        <input type="text" name="nom" id="lastName" onclick="getInputID(this)" onchange="errorIfEmptyInput(this.value)" minlength="2" placeholder="Nom" required/>
                         <i class="fas fa-check-circle"></i>
                         <i class="fas fa-exclamation-circle"></i>
                         <p class="error-message">Error message</p>
@@ -86,21 +86,21 @@ function cartAndFormAppear() {
                 </div>
                 <div class="address form-block form-block--long">
                     <label for="address">Adresse postale</label>
-                    <input type="text" name="adresse" id="address" placeholder="Numéro, nom de rue (Ex : 8, avenue Charles Fitte)" required/>
+                    <input type="text" name="adresse" id="address" onclick="getInputID(this)" onchange="errorIfEmptyInput(this.value)" placeholder="Numéro, nom de rue (Ex : 8, avenue Charles Fitte)" required/>
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
                     <p class="error-message">Error message</p>
                 </div>
                 <div class="city form-block form-block--long">
                     <label for="city">Code postal et Ville</label>
-                    <input type="text" name="ville" id="city" placeholder="Ex : 78000 Versailles" required/>
+                    <input type="text" name="ville" id="city" onclick="getInputID(this)" onchange="errorIfEmptyInput(this.value)" placeholder="Ex : 78000 Versailles" required/>
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
                     <p class="error-message">Error message</p>
                 </div>
                 <div class="email form-block form-block--long">
                     <label for="email">E-mail</label>
-                    <input type="email" name="email" id="email" placeholder="E-mail (Ex : alexandre.rouvain@gmail.com)" required/>
+                    <input type="email" name="email" id="email" onclick="getInputID(this)" onchange="errorIfEmptyInput(this.value)" placeholder="E-mail (Ex : alexandre.rouvain@gmail.com)" required/>
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
                     <p class="error-message">Error message</p>
