@@ -1,15 +1,17 @@
-// Identifier les inputs vides
+// EVENT LISTENER "ONCHANGE" - Identifier un input vide + renvoyer une ERROR
 
 function tagEmptyInput(input, inputValue) {
     
-    if (inputValue === '') {
+    if (inputValue.trim() != '' && inputValue.trim().length >= input.getAttribute("minlength")) {
+        setSuccessFor(input);
+    } else {
         setErrorFor(input, "Ce champ ne peut être vide");
     }
 
     return input;
 }
 
-// Renvoyer une ERROR pour X CAS
+// Renvoyer une ERROR ou un SUCCESS pour X CAS
 
 function setErrorFor(input, message) {
     const formBlock = input.parentElement;
@@ -21,11 +23,15 @@ function setErrorFor(input, message) {
     return formBlock;
 }
 
-// Renvoyer un SUCCESS pour X CAS
-
-function setSuccessFor(input, message) {
+function setSuccessFor(input) {
     const formBlock = input.parentElement;
-    formBlock.classList.add("success");
+
+    if (formBlock.classList.contains("error")) {
+        formBlock.classList.remove("error");
+        formBlock.classList.add("success");
+    } else {
+        formBlock.classList.add("success");
+    }
 
     return formBlock;
 }
