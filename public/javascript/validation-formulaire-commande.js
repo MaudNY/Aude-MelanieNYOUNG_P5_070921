@@ -11,11 +11,33 @@ function tagEmptyInput(input, inputValue) {
     return input;
 }
 
+// EVENT LISTENER "ONCHANGE" - Renvoyer une ERROR si le champ ne respecte pas le format "01234-T"
+
+function checkCityInput(input, inputValue) {
+    const cityRegex = /^(F-)?\d{5}\s[A-z]{1,}$/.test(inputValue);
+
+    if (cityRegex === true) {
+        setSuccessFor(input);
+    } else {
+        setErrorFor(input, "Veuillez respecter le format demandé : 12345 Ville")
+    }
+
+    return input;
+}
+
+
 // Renvoyer une ERROR ou un SUCCESS pour X CAS
 
 function setErrorFor(input, message) {
     const formBlock = input.parentElement;
-    formBlock.classList.add("error");
+    
+
+    if (formBlock.classList.contains("success")) {
+        formBlock.classList.remove("success");
+        formBlock.classList.add("error");
+    } else {
+        formBlock.classList.add("error");
+    }
 
     const errorMessage = formBlock.querySelector(".error-message");
     errorMessage.innerText = message;
@@ -35,8 +57,6 @@ function setSuccessFor(input) {
 
     return formBlock;
 }
-
-// Renvoyer une erreur >>> si TAILLE MINIMALE dans Prénom-Nom est strictement inférieure à 2
 
 // Renvoyer une erreur >>> si FORMAT du champ "City" est différent de 01234-xxxx
 
