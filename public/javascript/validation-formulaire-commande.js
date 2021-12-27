@@ -1,20 +1,36 @@
-// EVENT LISTENER "ONCHANGE" - Identifier un input vide + renvoyer une ERROR
+/* EVENT LISTENER "ONCHANGE" - Renvoyer une ERROR si les champs "firstName" et "lastName"...
+...ne respectent pas le format "Jean-Pierre" ou "Jean Pierre"*/
 
-function tagEmptyInput(input, inputValue) {
+function checkNameInputs(input, inputValue) {
+    const nameRegex = /^([A-Za-zéèüßäö]{2,})?([-]{0,1}[\s]*)?([A-Za-zéèüßäö]{2,})$/.test(inputValue);
     
-    if (inputValue.trim() != '' && inputValue.trim().length >= input.getAttribute("minlength")) {
+    if (nameRegex === true) {
         setSuccessFor(input);
     } else {
-        setErrorFor(input, "Ce champ ne peut être vide");
+        setErrorFor(input, "Veuillez correctement renseigner ce champ");
     }
 
     return input;
 }
 
-// EVENT LISTENER "ONCHANGE" - Renvoyer une ERROR si le champ ne respecte pas le format "01234-T"
+// "ONCHANGE" - Renvoyer une ERROR si le champ "address" contient autre chose que des lettres, chiffres et espaces
+
+function checkAddressInput(input, inputValue) {
+    const addressRegex = /^[A-Za-zéèüßäö0-9\s\',-]{8,}$/.test(inputValue);
+
+    if (addressRegex === true) {
+        setSuccessFor(input);
+    } else {
+        setErrorFor(input, "Veuillez renseigner une adresse valide")
+    }
+
+    return input;
+}
+
+// "ONCHANGE" - Renvoyer une ERROR si le champ "city" ne respecte pas le format "01234-T"
 
 function checkCityInput(input, inputValue) {
-    const cityRegex = /^(F-)?\d{5}\s[A-z]{1,}$/.test(inputValue);
+    const cityRegex = /^(F-)?\d{5}\s[A-zéèüßäö\s]{1,20}?([-]*)?[A-zéèüßäö\s]{1,20}?([-]*)?[A-zéèüßäö\s]{1,20}?([-]*)?[A-zéèüßäö\s]{1,20}$/.test(inputValue);
 
     if (cityRegex === true) {
         setSuccessFor(input);
@@ -23,6 +39,18 @@ function checkCityInput(input, inputValue) {
     }
 
     return input;
+}
+
+// "ONCHANGE" - Renvoyer une ERROR si le champ "email" ne contient pas d'adresse email
+
+function checkEmailInput(input, inputValue) {
+    const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(inputValue);
+    
+    if (emailRegex === true) {
+        setSuccessFor(input);
+    } else {
+        setErrorFor(input, "Veuillez renseigner une adresse email correcte")
+    }
 }
 
 
@@ -58,26 +86,7 @@ function setSuccessFor(input) {
     return formBlock;
 }
 
-// Renvoyer une erreur >>> si FORMAT du champ "City" est différent de 01234-xxxx
-
-// Renvoyer une erreur >>> si LE CHAMP "Email" ne contient pas une adresse email
-
-// Obtenir l'ID de l'input sur lequel on clique
-
-function getInputID(targetedInput) {
-    // Répertorier tous les inputs du formulaire dans un tableau
-    const inputNodeList = document.querySelectorAll("input");
-    const inputTableList = Array.from(inputNodeList);
-
-    // Récupérer l'ID de l'input sur lequel je clique
-    for (let input of inputTableList) {
-        const inputID = targetedInput.id;
-
-        return `#${inputID}`;
-    }
-}
-
-// Faire apparaître le bouton "COMMANDER" quand tous les "form-block" contiennent la classe "success"
+// "ONCHANGE" - Faire apparaître le bouton "COMMANDER" quand tous les "form-block" contiennent la classe "success"
 
 function makeOrderButtonAppear() {
     const $orderButton = document.querySelector(".bouton-type--commander");
@@ -101,7 +110,3 @@ function makeOrderButtonAppear() {
     
     return $orderButton;
 }
-
-window.addEventListener('load', function() {
-    makeOrderButtonAppear();
-})

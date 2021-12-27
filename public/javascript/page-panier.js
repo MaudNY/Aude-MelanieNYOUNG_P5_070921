@@ -71,14 +71,14 @@ function cartAndFormAppear() {
                 <div class="prenom-nom">
                     <div class="form-block form-block--small">
                         <label for="firstName">Prénom</label>
-                        <input type="text" name="prénom" id="firstName" oninput="" onchange="tagEmptyInput(this, this.value)" minlength="2" placeholder="Prénom" required/>
+                        <input type="text" name="prénom" id="firstName" onchange="checkNameInputs(this, this.value); makeOrderButtonAppear()" minlength="2" placeholder="Prénom" required/>
                         <i class="fas fa-check-circle"></i>
                         <i class="fas fa-exclamation-circle"></i>
                         <p class="error-message"></p>
                     </div>
                     <div class="form-block form-block--small">
                         <label for="lastName">Nom de famille</label>
-                        <input type="text" name="nom" id="lastName" oninput="" onchange="tagEmptyInput(this, this.value)" minlength="2" placeholder="Nom" required/>
+                        <input type="text" name="nom" id="lastName" onchange="checkNameInputs(this, this.value); makeOrderButtonAppear()" minlength="2" placeholder="Nom" required/>
                         <i class="fas fa-check-circle"></i>
                         <i class="fas fa-exclamation-circle"></i>
                         <p class="error-message"></p>
@@ -86,21 +86,21 @@ function cartAndFormAppear() {
                 </div>
                 <div class="address form-block form-block--long">
                     <label for="address">Adresse postale</label>
-                    <input type="text" name="adresse" id="address" onchange="tagEmptyInput(this, this.value)" minlength="8" placeholder="Numéro, nom de rue (Ex : 8, avenue Charles Fitte)" required/>
+                    <input type="text" name="adresse" id="address" onchange="checkAddressInput(this, this.value); makeOrderButtonAppear()" placeholder="Numéro, nom de rue (Ex : 8, avenue Charles Fitte)" required/>
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
                     <p class="error-message"></p>
                 </div>
                 <div class="city form-block form-block--long">
                     <label for="city">Code postal et Ville</label>
-                    <input type="text" name="ville" id="city" onchange="checkCityInput(this, this.value)" minlength="2" placeholder="26000 Valence" required/>
+                    <input type="text" name="ville" id="city" onchange="checkCityInput(this, this.value); makeOrderButtonAppear()" placeholder="26000 Valence" required/>
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
                     <p class="error-message"></p>
                 </div>
                 <div class="email form-block form-block--long">
                     <label for="email">E-mail</label>
-                    <input type="email" name="email" id="email" onchange="tagEmptyInput(this, this.value)" minlength="2" placeholder="E-mail (Ex : alexandre.rouvain@gmail.com)" required/>
+                    <input type="email" name="email" id="email" onchange="checkEmailInput(this, this.value); makeOrderButtonAppear()" placeholder="E-mail (Ex : alexandre.rouvain@gmail.com)" required/>
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
                     <p class="error-message"></p>

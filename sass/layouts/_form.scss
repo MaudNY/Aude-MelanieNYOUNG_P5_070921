@@ -58,6 +58,7 @@ input {
 }
     
 .error {
+    animation: wrong-input 100ms cubic-bezier(.4,.1,.6,.9) 2;
     input {
         border-color: $couleur-error;
     }
