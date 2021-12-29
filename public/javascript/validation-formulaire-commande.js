@@ -2,7 +2,7 @@
 ...ne respectent pas le format "Jean-Pierre" ou "Jean Pierre"*/
 
 function checkNameInputs(input, inputValue) {
-    const nameRegex = /^([A-Za-zéèüßäö]{2,})?([-]{0,1}[\s]*)?([A-Za-zéèüßäö]{2,})$/.test(inputValue);
+    const nameRegex = /^([A-Za-zéèëïüßäö]{1,})?([-]{0,1}[\ \']*)?([A-Za-zéèëïüßäö]{1,})?([\ \']*)?([A-Za-zéèëïüßäö]{1,})$/.test(inputValue);
     
     if (nameRegex === true) {
         setSuccessFor(input);
@@ -16,7 +16,7 @@ function checkNameInputs(input, inputValue) {
 // "ONCHANGE" - Renvoyer une ERROR si le champ "address" contient autre chose que des lettres, chiffres et espaces
 
 function checkAddressInput(input, inputValue) {
-    const addressRegex = /^[A-Za-zéèüßäö0-9\s\',-]{8,}$/.test(inputValue);
+    const addressRegex = /^[A-Za-zéèëïüßäö0-9\ \',-]{8,}$/.test(inputValue);
 
     if (addressRegex === true) {
         setSuccessFor(input);
@@ -30,7 +30,7 @@ function checkAddressInput(input, inputValue) {
 // "ONCHANGE" - Renvoyer une ERROR si le champ "city" ne respecte pas le format "01234-T"
 
 function checkCityInput(input, inputValue) {
-    const cityRegex = /^(F-)?\d{5}\s[A-zéèüßäö\s]{1,20}?([-]*)?[A-zéèüßäö\s]{1,20}?([-]*)?[A-zéèüßäö\s]{1,20}?([-]*)?[A-zéèüßäö\s]{1,20}$/.test(inputValue);
+    const cityRegex = /^(F-)?\d{5}\ ([A-zéèëïüßäö\ '-]{1,50})$/.test(inputValue);
 
     if (cityRegex === true) {
         setSuccessFor(input);

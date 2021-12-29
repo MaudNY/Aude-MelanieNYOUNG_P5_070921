@@ -1,11 +1,3 @@
-// Vider la clé "produit" du Local Storage
-
-function removeProductsInTheLocalStorage() {
-    localStorage.removeItem("product");
-
-    return localStorage;
-}
-
 // Récupérer l'ID de commande dans l'URL
 
 async function urlOrderID() {
@@ -20,8 +12,8 @@ async function urlOrderID() {
 async function orderConfirmationAppears() {
     
     const orderID = await urlOrderID();
-    const orderAmount = JSON.parse(localStorage.getItem("order final amount"));
-    const contactDetails = JSON.parse(localStorage.getItem("order contact details"));
+    const orderAmount = JSON.parse(localStorage.getItem("order-final-amount"));
+    const contactDetails = JSON.parse(localStorage.getItem("order-contact-details"));
       
     const $orderConfirmationTable = document.querySelector("#tableau-confirmation-commande");
 
@@ -49,6 +41,5 @@ async function orderConfirmationAppears() {
 }
 
 window.addEventListener('load', function() {
-    removeProductsInTheLocalStorage();
     orderConfirmationAppears();
 })

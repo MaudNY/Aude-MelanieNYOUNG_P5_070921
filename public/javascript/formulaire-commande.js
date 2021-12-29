@@ -37,7 +37,7 @@ function getFinalAmoutOfTheOrder() {
     const $cartAmout = document.querySelector("#somme-panier");
     const finalCartAmount = $cartAmout.innerHTML;
 
-    localStorage.setItem("order final amount", JSON.stringify(finalCartAmount));
+    localStorage.setItem("order-final-amount", JSON.stringify(finalCartAmount));
 
     return finalCartAmount;
 }
@@ -47,7 +47,7 @@ function getFinalAmoutOfTheOrder() {
 function getContactDetails() {
     const formValues = getFormValues();
     
-    localStorage.setItem("order contact details", JSON.stringify(formValues));
+    localStorage.setItem("order-contact-details", JSON.stringify(formValues));
 
     return formValues;
 }
@@ -79,6 +79,11 @@ function sendOrder() {
         const newUrl = location.assign(`page-confirmation-commande.html?order=${orderId}`);
 
         return newUrl;
+    })
+    .then(function() {
+        localStorage.removeItem("product");
+
+        return localStorage;
     })
 }
 

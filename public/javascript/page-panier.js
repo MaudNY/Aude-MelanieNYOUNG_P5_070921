@@ -71,7 +71,7 @@ function cartAndFormAppear() {
                 <div class="prenom-nom">
                     <div class="form-block form-block--small">
                         <label for="firstName">Prénom</label>
-                        <input type="text" name="prénom" id="firstName" onchange="checkNameInputs(this, this.value); makeOrderButtonAppear()" minlength="2" placeholder="Prénom" required/>
+                        <input type="text" name="prenom" id="firstName" onchange="checkNameInputs(this, this.value); makeOrderButtonAppear()" minlength="2" placeholder="Prénom" required/>
                         <i class="fas fa-check-circle"></i>
                         <i class="fas fa-exclamation-circle"></i>
                         <p class="error-message"></p>
