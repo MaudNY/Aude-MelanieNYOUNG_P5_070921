@@ -24,20 +24,9 @@ function cartVignetteAppears() {
     return $cartVignette;
 }
 
-// Supprimer la clé "order contact details" (si l'on se trouve sur une autre page que page-confirmation-commande.html)
-
-function removeContactDetailsFromLS() {
-    if (localStorage.getItem("order contact details")) {
-        localStorage.removeItem("order contact details")
-    }
-
-    return localStorage;
-}
-
 // EVENT LISTENER - Au chargement de la page...
 
 window.addEventListener ('load', function() {
     createCartVignette();
     cartVignetteAppears();
-    removeContactDetailsFromLS();
 })
