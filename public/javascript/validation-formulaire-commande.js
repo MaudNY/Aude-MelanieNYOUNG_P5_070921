@@ -57,33 +57,33 @@ function checkEmailInput(input, inputValue) {
 // Renvoyer une ERROR ou un SUCCESS pour X CAS
 
 function setErrorFor(input, message) {
-    const formBlock = input.parentElement;
+    const $formBlock = input.parentElement;
     
 
-    if (formBlock.classList.contains("success")) {
-        formBlock.classList.remove("success");
-        formBlock.classList.add("error");
+    if ($formBlock.classList.contains("success")) {
+        $formBlock.classList.remove("success");
+        $formBlock.classList.add("error");
     } else {
-        formBlock.classList.add("error");
+        $formBlock.classList.add("error");
     }
 
-    const errorMessage = formBlock.querySelector(".error-message");
+    const errorMessage = $formBlock.querySelector(".error-message");
     errorMessage.innerText = message;
 
-    return formBlock;
+    return $formBlock;
 }
 
 function setSuccessFor(input) {
-    const formBlock = input.parentElement;
+    const $formBlock = input.parentElement;
 
-    if (formBlock.classList.contains("error")) {
-        formBlock.classList.remove("error");
-        formBlock.classList.add("success");
+    if ($formBlock.classList.contains("error")) {
+        $formBlock.classList.remove("error");
+        $formBlock.classList.add("success");
     } else {
-        formBlock.classList.add("success");
+        $formBlock.classList.add("success");
     }
 
-    return formBlock;
+    return $formBlock;
 }
 
 // "ONCHANGE" - Faire apparaître le bouton "COMMANDER" quand tous les "form-block" contiennent la classe "success"
