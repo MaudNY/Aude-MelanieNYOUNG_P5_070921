@@ -11162,7 +11162,6 @@ a, ul {
   background: linear-gradient(to bottom right, #E8870D, #8F5BFE);
   width: 100%;
   height: 2px;
-  border-bottom: linear-gradient(to bottom right, #E8870D, #8F5BFE) 2px solid;
 }
 .ligne-séparation--page-panier {
   margin-top: 16px;
@@ -11334,7 +11333,7 @@ input {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 12.25 0em;
+  margin: 12.25em 0em;
 }
 .desc-produit h2, .desc-produit .h2 {
   font-size: 1.75em;
@@ -11345,7 +11344,7 @@ input {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 12.25 0em;
+  margin: 12.25em 0em;
 }
 
 .prix {
