@@ -2,7 +2,7 @@
 ...ne respectent pas le format "Jean-Pierre" ou "Jean Pierre"*/
 
 function checkNameInputs(input, inputValue) {
-    const nameRegex = /^([A-ZÉÈÊËÎÏa-zéèëîïüßäö]{1,})?([-]{0,1}[\ \']*)?([A-ZÉÈÊËÎÏa-zéèëîïüßäö]{1,})?([\ \']*)?([A-ZÉÈÊËÎÏa-zéèëîïüßäö]{1,})$/.test(inputValue);
+    const nameRegex = /^([A-ZÉÈÊËÎÏa-zéèëîïüßäö]{1,})?([-]{0,1}[\ \']*)?([A-ZÉÈÊËÎÏa-zéèëîïüßäö]{1,})?([-]{0,1}[\ \']*)?([A-ZÉÈÊËÎÏa-zéèëîïüßäö]{1,})?([-]{0,1}[\ \']*)?([A-ZÉÈÊËÎÏa-zéèëîïüßäö]{1,})$/.test(inputValue);
     
     if (nameRegex === true) {
         setSuccessFor(input);
