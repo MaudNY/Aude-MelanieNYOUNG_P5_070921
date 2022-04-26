@@ -11,7 +11,7 @@ Cloning and using this project requires to follow the next steps.
 
 This digital project is running with:
 
-BACKEND:
+BACKEND (not did it myself):
 
 > Server: Node.js
 
